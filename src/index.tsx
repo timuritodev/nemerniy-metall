@@ -1,19 +1,36 @@
-import React from 'react';
+import React, { FC } from 'react';
 import ReactDOM from 'react-dom/client';
+import { Routes, Route, HashRouter } from 'react-router-dom';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import { Layout } from './components/Layout/Layout';
+import { MainPage } from './pages/MainPage/MainPage';
+
+const Root: FC = () => {
+
+  return (
+    <div className="page">
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<MainPage />} />
+        </Route>
+      </Routes>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <Provider store={store}> */}
+    {/* <PersistGate loading={<div>Loading...</div>} persistor={persistor}> */}
+    <HashRouter>
+      <Root />
+    </HashRouter>
+    {/* </PersistGate>
+		</Provider> */}
   </React.StrictMode>
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
