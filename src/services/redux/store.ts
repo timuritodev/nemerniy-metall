@@ -12,10 +12,12 @@ import {
 	REGISTER,
 } from 'redux-persist';
 import { imageReducer } from './slices/images/images';
+import { blockReducer } from './slices/blocks/block';
 
 
 const rootReducer = combineReducers({
 	image: imageReducer,
+	block: blockReducer,
 });
 
 const persistConfig = {

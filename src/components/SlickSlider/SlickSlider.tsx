@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import { FC } from 'react';
 import { ImgCard } from '../ImgCard/ImgCard';
 import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
-import { IImage, IImageState } from '../../types/Image.types';
+import { IImage } from '../../types/Image.types';
 import { useEffect, useState } from 'react';
 import { getImagesApi } from '../../services/redux/slices/images/images';
 

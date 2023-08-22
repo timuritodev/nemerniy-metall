@@ -1,5 +1,5 @@
 .slick-slider_container {
-	margin: 0 165px 100px;
+	/* margin:  165px 100px; */
 }
 
 .slick-slider_title {
@@ -13,7 +13,7 @@
 }
 
 .slick-slider {
-	max-width: 1110px;
+	max-width: 920px;
 	display: flex;
 	justify-content: center;
 	text-align: left;
