@@ -1,0 +1,20 @@
+.block {
+    display: flex;
+    flex-direction: row;
+    width: 268px;
+    height: 90px;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 15px;
+}
+
+.block__title {
+    font-size: 18px;
+    line-height: 108%;
+    font-weight: 600;
+}
+
+.block__img {
+    width: 90px;
+    height: 90px;
+}

@@ -1,5 +1,48 @@
+/* .img {
+    width: 920px;
+    height: 305px;
+    border-radius: 15px;
+    position: relative;
+}
+
+.img__title {}
+
+.img__text {}
+
+.img__image {
+    width: 920px;
+    height: 305px;
+} */
+
 .img {
     width: 920px;
     height: 305px;
     border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.img__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.img__title {
+    margin-bottom: 10px;
+}
+
+.img__text {}
+
+.img__image {
+    width: 920px;
+    height: 305px;
+    object-fit: cover;
 }

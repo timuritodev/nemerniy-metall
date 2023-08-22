@@ -40,7 +40,7 @@ export const SlickSlider: FC = () => {
         <div className="slick-slider_container">
             <Slider {...settings} className="slick-slider">
                 {data.map((item) => (
-                    <ImgCard pic={item.image} />
+                    <ImgCard data={item} />
                 ))}
             </Slider>
         </div>

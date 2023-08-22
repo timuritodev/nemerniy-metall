@@ -1,4 +1,7 @@
 import { IBlock } from "../../../../types/Block.types";
+import pic1 from "../../../../images/07zi7wgi46i50v1n2ywepa8bp7rpl1m2.webp"
+import pic2 from "../../../../images/b8dwceph3of19gdgwe4i7psnz0h4xz6r.webp"
+import pic3 from "../../../../images/c6nph83dy5wt5b9ty0sp0ixu9vl906il.webp"
 
 // const API_URL = 'http://127.0.0.1:3000';
 // const checkRes = (res: Response) => {
@@ -26,17 +29,27 @@ export const getBlocks = (): Array<IBlock> => {
         {
             id: 1,
             title: 'Арматура',
-            image: '',
+            image: pic1,
         },
         {
             id: 1,
             title: 'Листовой прокат',
-            image: '',
+            image: pic2,
         },
         {
             id: 1,
             title: 'Сорт',
-            image: '',
+            image: pic3,
+        },
+        {
+            id: 1,
+            title: 'Сорт',
+            image: pic3,
+        },
+        {
+            id: 1,
+            title: 'Сорт',
+            image: pic3,
         }
     ]
 

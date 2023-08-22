@@ -31,13 +31,13 @@ export const getImgs = (): Array<IImage> => {
         },
         {
             id: 1,
-            title: 'Скидки 15%',
+            title: 'Скидки %',
             text: 'Арматура 5*5, Уголок',
             image: 'https://in-rating.ru/space/wp-content/uploads/2023/03/Les-trois-mousquetaires-DArtagnan-9-1200.jpg',
         },
         {
             id: 1,
-            title: 'Скидки 15%',
+            title: ' 15%',
             text: 'Арматура 5*5, Уголок',
             image: 'https://avatars.mds.yandex.net/get-znatoki/1548967/2a0000016cc241be5ba3b55cc281e4c2fa14/w480',
         }
