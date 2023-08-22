@@ -1,0 +1,24 @@
+.nav {
+    display: flex;
+	align-items: center;
+    justify-content: space-between;
+	height: 40px;
+	background-color: #ffffffd1;
+	max-width: 1440px;
+	margin: 0 auto;
+}
+
+.nav__link {
+    color: rgb(10, 24, 43);
+    text-decoration: none;
+    margin: 0 15px 0 15px;
+}
+
+/* .links__container {
+    
+} */
+
+.nav__text {
+    color: rgb(10, 24, 43);
+    margin: 0 15px 0 0;
+}

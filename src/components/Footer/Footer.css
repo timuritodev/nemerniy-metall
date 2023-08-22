@@ -1,8 +1,11 @@
 .footer {
-    max-width: 1440px;
     display: flex;
-    flex-direction: row;
-    gap: 15px;
+	align-items: center;
+	height: 118px;
+	gap: 30px;
+	background-color: #ffffffd1;
+	max-width: 1440px;
+	margin: 0 auto;
 }
 
 .footer__text {

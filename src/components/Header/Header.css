@@ -1,10 +1,48 @@
 .header {
-    max-width: 1440px;
     display: flex;
-    flex-direction: row;
-    gap: 15px;
+	align-items: center;
+	height: 47px;
+	background-color: #ffffffd1;
+	max-width: 1440px;
+    justify-content: space-between;
+	margin: 0 auto;
 }
 
-.header__link {
-    color: red;
+.header__logo {
+    width: 263px;
+    height: 47px;
+}
+
+.header__search {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	min-width: 521px;
+	height: 40px;
+	border: 2px solid #fd9207;
+	border-radius: 6px;
+}
+
+.header__search-input {
+	background-color: transparent;
+	border: none;
+	font-weight: 500;
+	font-size: 16px;
+	line-height: 20.08px;
+	color: #fd9207;
+	max-width: 750px;
+	width: 100%;
+	margin: 0 15px 0;
+	outline: none;
+}
+
+.header__search-button_search {
+    margin: 0 10px 0 0;
+}
+
+.header__button {
+    border: none;
+    cursor: pointer;
+    margin: 0 15px 0 0;
+    background-color: transparent;
 }

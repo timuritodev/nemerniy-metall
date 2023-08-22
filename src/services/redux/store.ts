@@ -11,10 +11,11 @@ import {
 	PURGE,
 	REGISTER,
 } from 'redux-persist';
+import { imageReducer } from './slices/images/images';
 
 
 const rootReducer = combineReducers({
-
+	image: imageReducer,
 });
 
 const persistConfig = {

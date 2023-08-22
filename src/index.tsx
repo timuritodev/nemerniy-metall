@@ -1,7 +1,11 @@
 import React, { FC } from 'react';
 import ReactDOM from 'react-dom/client';
 import { Routes, Route, HashRouter } from 'react-router-dom';
+import { store, persistor } from './services/redux/store';
 import './index.css';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+
 
 import { Layout } from './components/Layout/Layout';
 import { MainPage } from './pages/MainPage/MainPage';
@@ -24,13 +28,13 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    {/* <Provider store={store}> */}
-    {/* <PersistGate loading={<div>Loading...</div>} persistor={persistor}> */}
-    <HashRouter>
-      <Root />
-    </HashRouter>
-    {/* </PersistGate>
-		</Provider> */}
+    <Provider store={store}> 
+      <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
+        <HashRouter>
+          <Root />
+        </HashRouter>
+      </PersistGate>
+    </Provider>
   </React.StrictMode>
 );
 
