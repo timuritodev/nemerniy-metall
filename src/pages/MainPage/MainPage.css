@@ -1,7 +1,7 @@
 .main {
     display: flex;
     flex-direction: row;
-    background-color: #ffffffd1;
+    background-color: #fff;
     max-width: 1440px;
     padding: 50px 0 200px 0;
     gap: 100px;

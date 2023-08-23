@@ -27,6 +27,7 @@
     top: 0;
     left: 0;
     padding: 20px;
+    height: 305px;
     box-sizing: border-box;
     color: white;
     display: flex;
@@ -36,10 +37,14 @@
 }
 
 .img__title {
-    margin-bottom: 10px;
+    font-size: 40px;
+    line-height: 108%;
+    margin: 0 0 10px 0;
 }
 
-.img__text {}
+.img__text {
+    padding: 0 0 130px 0;
+}
 
 .img__image {
     width: 920px;

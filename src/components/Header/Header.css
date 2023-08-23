@@ -2,10 +2,11 @@
     display: flex;
 	align-items: center;
 	height: 47px;
-	background-color: #f0f0f0;
+	background-color: #fff;
 	max-width: 1440px;
     justify-content: space-between;
 	margin: 0 auto;
+    padding: 20px 0 0 0;
 }
 
 .header__logo {
@@ -18,7 +19,7 @@
 	flex-direction: row;
 	align-items: center;
 	min-width: 521px;
-	height: 40px;
+	height: 45px;
 	border: 2px solid #fd9207;
 	border-radius: 6px;
 }
