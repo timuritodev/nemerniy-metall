@@ -11,5 +11,5 @@ export interface IBlockState {
 }
 
 export interface IBlockProps {
-	data: [];
+	data: IBlock[];
 }
