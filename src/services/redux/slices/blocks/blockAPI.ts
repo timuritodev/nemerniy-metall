@@ -32,12 +32,12 @@ export const getBlocks = (): Array<IBlock> => {
             image: pic1,
         },
         {
-            id: 1,
+            id: 2,
             title: 'Листовой прокат',
             image: pic2,
         },
         {
-            id: 1,
+            id: 3,
             title: 'Сорт',
             image: pic3,
         },

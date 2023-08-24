@@ -13,8 +13,13 @@ export const MainPage: FC = () => {
     const dispatch = useAppDispatch();
     const blocks = useAppSelector((state) => state.block.blocks);
     const cards = useAppSelector((state) => state.card.cards)
+    const cardsBin = useAppSelector((state) => state.card.cardsBin)
+    const cardsFav = useAppSelector((state) => state.card.cardsFavorite)
 
-    console.log(cards)
+
+    console.log(cardsBin, 'bin')
+    console.log(cardsFav, 'fav')
+
     useEffect(() => {
         dispatch(getBlocksApi());
         dispatch(getCardsApi());

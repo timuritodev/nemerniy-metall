@@ -29,35 +29,45 @@ export const getCards = (): Array<ICard> => {
             title: 'Арматура',
             image: pic1,
             size: '100 мм',
-            price: '4420 Руб ПМ/М' 
+            price: '4420 Руб ПМ/М',
+            is_favorite: false,
+            is_bin: false, 
         },
         {
-            id: 1,
+            id: 2,
             title: 'Арматура',
             image: pic1,
             size: '100 мм',
-            price: '4420 Руб ПМ/М' 
+            price: '4420 Руб ПМ/М',
+            is_favorite: false,
+            is_bin: false, 
         },
         {
-            id: 1,
+            id: 3,
             title: 'Арматура',
             image: pic1,
             size: '100 мм',
-            price: '4420 Руб ПМ/М' 
+            price: '4420 Руб ПМ/М',
+            is_favorite: false,
+            is_bin: false, 
         },
         {
-            id: 1,
+            id: 4,
             title: 'Арматура',
             image: pic1,
             size: '100 мм',
-            price: '4420 Руб ПМ/М' 
+            price: '4420 Руб ПМ/М',
+            is_favorite: false,
+            is_bin: false, 
         },
         {
-            id: 1,
+            id: 5,
             title: 'Арматура',
             image: pic1,
             size: '100 мм',
-            price: '4420 Руб ПМ/М' 
+            price: '4420 Руб ПМ/М',
+            is_favorite: false,
+            is_bin: false, 
         },
     ]
 

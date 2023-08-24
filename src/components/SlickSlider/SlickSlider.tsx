@@ -36,12 +36,11 @@ export const SlickSlider: FC = () => {
 		setData(img);
 	}, []);
 
-    console.log(img)
     return (
         <div className="slick-slider_container">
             <Slider {...settings} className="slick-slider">
                 {data.map((item) => (
-                    <ImgCard data={item} />
+                    <ImgCard data={item} key={item.id}/>
                 ))}
             </Slider>
         </div>

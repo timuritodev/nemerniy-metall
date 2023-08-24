@@ -12,6 +12,7 @@
 	border: 1px solid #262422be;
     border-radius: 15px;
     overflow: hidden;
+    position: relative;
 }
 
 .card__image {
@@ -19,6 +20,13 @@
     height: 225px;
 }
 
+.card__heart {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 20px;
+    height: 20px;
+}
 .card__container {
     margin: 10px 0 10px 10px;
 }
