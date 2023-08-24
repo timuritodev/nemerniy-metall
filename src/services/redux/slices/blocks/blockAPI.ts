@@ -41,16 +41,6 @@ export const getBlocks = (): Array<IBlock> => {
             title: 'Сорт',
             image: pic3,
         },
-        {
-            id: 1,
-            title: 'Сорт',
-            image: pic3,
-        },
-        {
-            id: 1,
-            title: 'Сорт',
-            image: pic3,
-        }
     ]
 
 	return myblock;

@@ -1,7 +1,7 @@
 import { Button } from '../Button/Button';
 import './Footer.css';
 import { FC } from 'react';
-import pic from "../../images/obezyanyi-huliganyi-hrame-uluvatu-3.jpg";
+import pic from "../../images/logoza.ru-PhotoRoom 1.svg";
 import { Telephone } from '../Telephone/Telephone';
 
 export const Footer: FC = () => {

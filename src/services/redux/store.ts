@@ -13,11 +13,13 @@ import {
 } from 'redux-persist';
 import { imageReducer } from './slices/images/images';
 import { blockReducer } from './slices/blocks/block';
+import { cardReducer } from './slices/cards/cards';
 
 
 const rootReducer = combineReducers({
 	image: imageReducer,
 	block: blockReducer,
+    card: cardReducer,
 });
 
 const persistConfig = {

@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import './Header.css';
 import { FC } from 'react';
-import pic from "../../images/obezyanyi-huliganyi-hrame-uluvatu-3.jpg";
+import pic from "../../images/logoza.ru-PhotoRoom 1.svg";
 import search from "../../images/search.svg";
 import heart from "../../images/hearts.png"
 import cart from "../../images/cart.png"

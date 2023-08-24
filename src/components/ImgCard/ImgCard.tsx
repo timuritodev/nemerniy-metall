@@ -22,7 +22,7 @@ export const ImgCard = ({ data }: { data: IImage }) => {
                 </div>
                 <Button title={'Оставить заявку'} />
             </div>
-            <img className='img__image' src={data.image} alt={data.image} />
+            {/* <img className='img__image' src={data.image} alt={data.image} /> */}
         </section>
     )
 }
