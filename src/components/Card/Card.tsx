@@ -18,7 +18,6 @@ export const Card = ({ data }: { data: any }) => {
         (state) => state.card.cards.find((card) => card.id === id)?.is_bin
     );
 
-
     const handleClickFavorite = () => {
         dispatch(updateFavorite({ favorite: !cardsFav, id }));
     };
@@ -27,14 +26,10 @@ export const Card = ({ data }: { data: any }) => {
         dispatch(updateBin({ bin: !cardsBin, id }));
     };
 
-    const typesImg =
-        cardsFav
-            ? heart_clicked
-            : heart
-        // : cardsBin
-        //     ? 'a'
-        //     : 'as'
+    const typesImg = data.is_favorite ? heart_clicked : heart;
 
+    const typesText = data.is_bin ? '-' : 'В корзину';
+    
     return (
         <section className='card'>
             <img className='card__image' src={data.image} alt={data.image} />
@@ -46,7 +41,7 @@ export const Card = ({ data }: { data: any }) => {
                 </div>
                 <div className='card__price_container'>
                     <p className='card__price'>{data.price}</p>
-                    <button className='card__button' onClick={handleClickBin}>В корзину</button>
+                    <button className='card__button' onClick={handleClickBin}>{typesText}</button>
                 </div>
             </div>
         </section>

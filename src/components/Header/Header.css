@@ -12,6 +12,7 @@
 .header__logo {
     width: 263px;
     height: 47px;
+    cursor: pointer;
 }
 
 .header__search {

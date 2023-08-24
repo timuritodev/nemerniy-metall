@@ -35,7 +35,7 @@ export const getCards = (): Array<ICard> => {
         },
         {
             id: 2,
-            title: 'Арматура',
+            title: 'NFa',
             image: pic1,
             size: '100 мм',
             price: '4420 Руб ПМ/М',
@@ -44,7 +44,7 @@ export const getCards = (): Array<ICard> => {
         },
         {
             id: 3,
-            title: 'Арматура',
+            title: 'фывфФ',
             image: pic1,
             size: '100 мм',
             price: '4420 Руб ПМ/М',
@@ -53,7 +53,7 @@ export const getCards = (): Array<ICard> => {
         },
         {
             id: 4,
-            title: 'Арматура',
+            title: 'ФЬЖДйцу',
             image: pic1,
             size: '100 мм',
             price: '4420 Руб ПМ/М',
@@ -62,7 +62,7 @@ export const getCards = (): Array<ICard> => {
         },
         {
             id: 5,
-            title: 'Арматура',
+            title: 'аьыдв',
             image: pic1,
             size: '100 мм',
             price: '4420 Руб ПМ/М',

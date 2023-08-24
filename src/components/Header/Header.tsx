@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
 import { FC } from 'react';
 import pic from "../../images/logoza.ru-PhotoRoom 1.svg";
@@ -7,9 +7,18 @@ import heart from "../../images/hearts.png"
 import cart from "../../images/cart.png"
 
 export const Header: FC = () => {
+    const navigate = useNavigate();
+
+    const handleClickFav = () => {
+        navigate('/favorites')
+    };
+
+    const handleClickLogo = () => {
+        navigate('/');
+    }
     return (
         <header className='header'>
-            <img className='header__logo' src={pic} alt={pic} />
+            <img className='header__logo' src={pic} alt={pic} onClick={handleClickLogo}/>
             <div className="header__container">
                 <form className="header__search">
                     <input
@@ -33,7 +42,7 @@ export const Header: FC = () => {
             </div>
             <div className='button__container'>
                 <img className='header__button_img' src={heart} alt={heart} />
-                <button className='header__button'>Избранное</button>
+                <button className='header__button' onClick={handleClickFav}>Избранное</button>
                 <img className='header__button_img' src={cart} alt={cart} />
                 <button className='header__button'>Корзина</button>
             </div>
