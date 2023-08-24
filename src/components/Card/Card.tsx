@@ -23,7 +23,7 @@ export const Card = ({ data }: { data: any }) => {
         dispatch(updateFavorite({ favorite: !cardsFav, id }));
     };
 
-    const handleClickWatch = () => {
+    const handleClickBin = () => {
         dispatch(updateBin({ bin: !cardsBin, id }));
     };
 
@@ -31,11 +31,14 @@ export const Card = ({ data }: { data: any }) => {
         cardsFav
             ? heart_clicked
             : heart
+        // : cardsBin
+        //     ? 'a'
+        //     : 'as'
 
     return (
-        <section className='card' onClick={handleClickFavorite}>
+        <section className='card'>
             <img className='card__image' src={data.image} alt={data.image} />
-            <img className='card__heart' src={typesImg} alt={heart} />
+            <img className='card__heart' src={typesImg} alt={heart} onClick={handleClickFavorite}/>
             <div className='card__container'>
                 <div className='card__text-container'>
                     <h2 className='card__title'>{data.title}</h2>
@@ -43,7 +46,7 @@ export const Card = ({ data }: { data: any }) => {
                 </div>
                 <div className='card__price_container'>
                     <p className='card__price'>{data.price}</p>
-                    <button className='card__button' onClick={handleClickWatch}>В корзину</button>
+                    <button className='card__button' onClick={handleClickBin}>В корзину</button>
                 </div>
             </div>
         </section>

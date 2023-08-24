@@ -71,7 +71,7 @@ export const cardSlice = createSlice({
                 state.status = 'success';
                 const { id, favorite } = action.payload;
                 state.cards = state.cards.map((card) =>
-                card.id === id ? { ...card, is_favorite: favorite } : card
+                    card.id === id ? { ...card, is_favorite: favorite } : card
                 );
                 state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
                 // state.cardsBin = state.cards.filter((card) => card.is_bin);
