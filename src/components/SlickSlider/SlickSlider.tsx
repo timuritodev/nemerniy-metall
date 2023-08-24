@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './SlickSlider.css';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';

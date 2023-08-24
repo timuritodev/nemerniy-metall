@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import './MainPage.css';
 import { FC } from 'react';
 import { SlickSlider } from '../../components/SlickSlider/SlickSlider';

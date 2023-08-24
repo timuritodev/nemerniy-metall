@@ -3,6 +3,8 @@ import './Header.css';
 import { FC } from 'react';
 import pic from "../../images/obezyanyi-huliganyi-hrame-uluvatu-3.jpg";
 import search from "../../images/search.svg";
+import heart from "../../images/hearts.png"
+import cart from "../../images/cart.png"
 
 export const Header: FC = () => {
     return (
@@ -30,7 +32,9 @@ export const Header: FC = () => {
                 </form>
             </div>
             <div className='button__container'>
+                <img className='header__button_img' src={heart} alt={heart} />
                 <button className='header__button'>Избранное</button>
+                <img className='header__button_img' src={cart} alt={cart} />
                 <button className='header__button'>Корзина</button>
             </div>
         </header>
