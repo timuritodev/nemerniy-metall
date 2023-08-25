@@ -70,8 +70,8 @@ export const cardSlice = createSlice({
             .addCase(getCardsApi.fulfilled, (state, action) => {
                 state.status = 'success';
                 state.cards = action.payload;
-                // state.cardsFavorite = action.payload.filter((film) => film.is_favorite);
-                // state.cardsBin = action.payload.filter((film) => film.is_bin);
+                state.cardsFavorite = action.payload.filter((film) => film.is_favorite);
+                state.cardsBin = action.payload.filter((film) => film.is_bin);
             })
             .addCase(updateFavorite.fulfilled, (state, action) => {
                 state.status = 'success';
@@ -79,7 +79,7 @@ export const cardSlice = createSlice({
                 state.cards = state.cards.map((card) =>
                     card.id === id ? { ...card, is_favorite: favorite } : card
                 );
-                // state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
+                state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
                 // state.cardsBin = state.cards.filter((card) => card.is_bin);
                 // if (favorite) {
                 //     const existingCardInFavorites = state.cardsFavorite.find((card) => card.id === id);
@@ -92,20 +92,20 @@ export const cardSlice = createSlice({
                 // } else {
                 //     state.cardsFavorite = state.cardsFavorite.filter((card) => card.id !== id);
                 // }
-                const existingCardInFavorites = state.cardsFavorite.find((card) => card.id === id);
+                // const existingCardInFavorites = state.cardsFavorite.find((card) => card.id === id);
 
-                if (favorite) {
-                    if (!existingCardInFavorites) {
-                        const cardToAdd = state.cards.find((card) => card.id === id);
-                        if (cardToAdd) {
-                            state.cardsFavorite.push(cardToAdd);
-                        }
-                    }
-                } else {
-                    if (existingCardInFavorites) {
-                        state.cardsFavorite = state.cardsFavorite.filter((card) => card.id !== id);
-                    }
-                }
+                // if (favorite) {
+                //     if (!existingCardInFavorites) {
+                //         const cardToAdd = state.cards.find((card) => card.id === id);
+                //         if (cardToAdd) {
+                //             state.cardsFavorite.push(cardToAdd);
+                //         }
+                //     }
+                // } else {
+                //     if (existingCardInFavorites) {
+                //         state.cardsFavorite = state.cardsFavorite.filter((card) => card.id !== id);
+                //     }
+                // }
             })
             .addCase(updateBin.fulfilled, (state, action) => {
                 state.status = 'success';
@@ -114,18 +114,18 @@ export const cardSlice = createSlice({
                     card.id === id ? { ...card, is_bin: bin } : card
                 );
                 // state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
-                // state.cardsBin = state.cards.filter((card) => card.is_bin);
-                if (bin) {
-                    const existingCardInBin = state.cardsBin.find((card) => card.id === id);
-                    if (!existingCardInBin) {
-                        const cardToAdd = state.cards.find((card) => card.id === id);
-                        if (cardToAdd) {
-                            state.cardsBin.push(cardToAdd);
-                        }
-                    }
-                } else {
-                    state.cardsBin = state.cardsBin.filter((card) => card.id !== id);
-                }
+                state.cardsBin = state.cards.filter((card) => card.is_bin);
+                // if (bin) {
+                //     const existingCardInBin = state.cardsBin.find((card) => card.id === id);
+                //     if (!existingCardInBin) {
+                //         const cardToAdd = state.cards.find((card) => card.id === id);
+                //         if (cardToAdd) {
+                //             state.cardsBin.push(cardToAdd);
+                //         }
+                //     }
+                // } else {
+                //     state.cardsBin = state.cardsBin.filter((card) => card.id !== id);
+                // }
             });
     },
 });
