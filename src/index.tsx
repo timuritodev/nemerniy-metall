@@ -10,6 +10,7 @@ import { Provider } from 'react-redux';
 import { Layout } from './components/Layout/Layout';
 import { MainPage } from './pages/MainPage/MainPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
+import { BinPage } from './pages/BinPage/BinPage';
 
 const Root: FC = () => {
 
@@ -19,6 +20,7 @@ const Root: FC = () => {
         <Route path="/" element={<Layout />}>
           <Route path="/" element={<MainPage />} />
           <Route path="/favorites" element={<FavoritePage />} />
+          <Route path="/bin" element={<BinPage />} />
         </Route>
       </Routes>
     </div>

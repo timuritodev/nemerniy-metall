@@ -13,6 +13,10 @@ export const Header: FC = () => {
         navigate('/favorites')
     };
 
+    const handleClickBin = () => {
+        navigate('/bin')
+    };
+
     const handleClickLogo = () => {
         navigate('/');
     }
@@ -44,7 +48,7 @@ export const Header: FC = () => {
                 <img className='header__button_img' src={heart} alt={heart} />
                 <button className='header__button' onClick={handleClickFav}>Избранное</button>
                 <img className='header__button_img' src={cart} alt={cart} />
-                <button className='header__button'>Корзина</button>
+                <button className='header__button' onClick={handleClickBin}>Корзина</button>
             </div>
         </header>
     )
