@@ -1,5 +1,4 @@
-export interface ICard {
-    _id: string,
+export interface ICardbyid {
 	id: number;
 	title: string;
     image: string;
@@ -9,14 +8,8 @@ export interface ICard {
     is_bin?: boolean;
 }
 
-export interface ICardState {
+export interface ICardbyidState {
 	status: 'idle' | 'success' | 'loading' | 'failed';
 	error: string | undefined;
-	cards: Array<ICard>;
-    cardsFavorite: Array<ICard>;
-    cardsBin: Array<ICard>;
-}
-
-export interface ICardProps {
-	data: ICard[];
+	cardbyid: ICardbyid;
 }

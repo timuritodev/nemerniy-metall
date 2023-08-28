@@ -11,6 +11,7 @@ import { Layout } from './components/Layout/Layout';
 import { MainPage } from './pages/MainPage/MainPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 import { BinPage } from './pages/BinPage/BinPage';
+import { CardPage } from './pages/CardPage/CardPage';
 
 const Root: FC = () => {
 
@@ -21,6 +22,7 @@ const Root: FC = () => {
           <Route path="/" element={<MainPage />} />
           <Route path="/favorites" element={<FavoritePage />} />
           <Route path="/bin" element={<BinPage />} />
+          <Route path="/cardpage" element={<CardPage />} />
         </Route>
       </Routes>
     </div>

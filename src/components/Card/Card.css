@@ -18,6 +18,7 @@
 .card__image {
     width: 296px;
     height: 225px;
+    cursor: pointer;
 }
 
 .card__heart {
@@ -27,6 +28,7 @@
     width: 20px;
     height: 20px;
 }
+
 .card__container {
     margin: 10px 0 10px 10px;
 }

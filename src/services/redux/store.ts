@@ -14,12 +14,14 @@ import {
 import { imageReducer } from './slices/images/images';
 import { blockReducer } from './slices/blocks/block';
 import { cardReducer } from './slices/cards/cards';
+import { cardbyidReducer } from './slices/cardbyid/cardbyid';
 
 
 const rootReducer = combineReducers({
 	image: imageReducer,
 	block: blockReducer,
     card: cardReducer,
+	cardbyid: cardbyidReducer
 });
 
 const persistConfig = {

@@ -1,75 +1,24 @@
 import { ICard } from "../../../../types/Card.types";
-import pic1 from "../../../../images/steel.webp"
+import { API_BASE_URL } from "../../../../utils/constants";
 
-// const API_URL = 'http://127.0.0.1:3000';
-// const checkRes = (res: Response) => {
-//     if (res.ok) {
-//         return res.json();
-//     } else {
-//         return Promise.reject(res);
-//     }
-// };
 
-// const fetchData = (url: string, data?: IData) => {
-// 	return fetch(url, {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 		},
-// 		...(!!data && { body: JSON.stringify(data) }),
-// 	}).then((res) => checkRes(res));
-// };
+const checkRes = (res: Response) => {
+    if (res.ok) {
+        return res.json();
+    } else {
+        return Promise.reject(res);
+    }
+};
 
-export const getCards = (): Array<ICard> => {
-	// return fetchData(`${API_URL}/signin`, data);
+const fetchData = (url: string) => {
+    return fetch(url, {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+    }).then((res) => checkRes(res));
+};
 
-	const mycard = [
-        {
-            id: 1,
-            title: 'Арматура',
-            image: pic1,
-            size: '100 мм',
-            price: '4420 Руб ПМ/М',
-            is_favorite: false,
-            is_bin: false, 
-        },
-        {
-            id: 2,
-            title: 'NFa',
-            image: pic1,
-            size: '100 мм',
-            price: '4420 Руб ПМ/М',
-            is_favorite: false,
-            is_bin: false, 
-        },
-        {
-            id: 3,
-            title: 'фывфФ',
-            image: pic1,
-            size: '100 мм',
-            price: '4420 Руб ПМ/М',
-            is_favorite: false,
-            is_bin: false, 
-        },
-        {
-            id: 4,
-            title: 'ФЬЖДйцу',
-            image: pic1,
-            size: '100 мм',
-            price: '4420 Руб ПМ/М',
-            is_favorite: false,
-            is_bin: false, 
-        },
-        {
-            id: 5,
-            title: 'аьыдв',
-            image: pic1,
-            size: '100 мм',
-            price: '4420 Руб ПМ/М',
-            is_favorite: false,
-            is_bin: false, 
-        },
-    ]
-
-	return mycard;
+export const getCards = (): Promise<Array<ICard>> => {
+    return fetchData(`${API_BASE_URL}/cards`);
 };

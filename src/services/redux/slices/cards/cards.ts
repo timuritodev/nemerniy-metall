@@ -27,7 +27,8 @@ const initialState: ICardState = {
     status: 'idle',
     error: '',
     cards: [
-        {
+        {   
+            _id: '',
             id: 0,
             title: '',
             image: '',
@@ -39,6 +40,7 @@ const initialState: ICardState = {
     ],
     cardsFavorite: [
         {
+            _id: '',
             id: 0,
             title: '',
             image: '',
@@ -50,6 +52,7 @@ const initialState: ICardState = {
     ],
     cardsBin: [
         {
+            _id: '',
             id: 0,
             title: '',
             image: '',

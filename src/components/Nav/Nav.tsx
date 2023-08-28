@@ -13,7 +13,9 @@ export const Nav: FC = () => {
                 <Link to="/return" className='nav__link'>Возврат</Link>
                 <Link to="/contacts" className='nav__link'>Контакты</Link>
             </div>
-            <Telephone />
+            <div className='telephone__container'>
+                <Telephone />
+            </div>
         </nav>
     )
 }
