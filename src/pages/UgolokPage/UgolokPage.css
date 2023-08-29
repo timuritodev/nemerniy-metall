@@ -1,0 +1,10 @@
+.ugolok-page {
+    display: flex;
+    flex-direction: row;
+    background-color: #fff;
+    max-width: 1260px;
+    padding: 50px 0 100px 0;
+    gap: 70px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}

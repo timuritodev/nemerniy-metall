@@ -12,6 +12,8 @@ import { MainPage } from './pages/MainPage/MainPage';
 import { FavoritePage } from './pages/FavoritePage/FavoritePage';
 import { BinPage } from './pages/BinPage/BinPage';
 import { CardPage } from './pages/CardPage/CardPage';
+import { BalkaPage } from './pages/BalkaPage/BalkaPage';
+import { UgolokPage } from './pages/UgolokPage/UgolokPage';
 
 const Root: FC = () => {
 
@@ -23,6 +25,8 @@ const Root: FC = () => {
           <Route path="/favorites" element={<FavoritePage />} />
           <Route path="/bin" element={<BinPage />} />
           <Route path="/cardpage" element={<CardPage />} />
+          <Route path="/balka-page" element={<BalkaPage />} />
+          <Route path="/ugolok-page" element={<UgolokPage />} />
         </Route>
       </Routes>
     </div>

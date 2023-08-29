@@ -1,4 +1,6 @@
-import { IBlock } from "../../../../types/Block.types";
+// import { ICard } from "../../../../types/Card.types";
+import { ICard } from "../../../../types/Card.types";
+import { IItem } from "../../../../types/Items.types";
 import { API_BASE_URL } from "../../../../utils/constants";
 
 const checkRes = (res: Response) => {
@@ -18,6 +20,6 @@ const fetchData = (url: string) => {
     }).then((res) => checkRes(res));
 };
 
-export const getBlocks = (): Promise<Array<IBlock>> => {
-    return fetchData(`${API_BASE_URL}/blocks`);
+export const getItems = (): Promise<IItem[]> => {
+    return fetchData(`${API_BASE_URL}/items`);
 };

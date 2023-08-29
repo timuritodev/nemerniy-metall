@@ -1,45 +1,24 @@
 import { IImage } from "../../../../types/Image.types";
 
-// const API_URL = 'http://127.0.0.1:3000';
-// const checkRes = (res: Response) => {
-//     if (res.ok) {
-//         return res.json();
-//     } else {
-//         return Promise.reject(res);
-//     }
-// };
-
-// const fetchData = (url: string, data?: IData) => {
-// 	return fetch(url, {
-// 		method: 'POST',
-// 		headers: {
-// 			'Content-Type': 'application/json',
-// 		},
-// 		...(!!data && { body: JSON.stringify(data) }),
-// 	}).then((res) => checkRes(res));
-// };
-
 export const getImgs = (): Array<IImage> => {
-	// return fetchData(`${API_URL}/signin`, data);
-
 	const myimg = [
         {
             id: 1,
             title: 'Скидки 15%',
             text: 'Арматура 5*5, Уголок',
-            image: 'https://fs.kinomania.ru/image/file/film_wallpaper/a/3c/a3cdf7cabc49ea4612b126ae2a30ecbf.1440.900.jpeg',
+            image: 'https://png.pngtree.com/thumb_back/fw800/background/20200821/pngtree-dark-blue-solid-color-background-wallpaper-image_396572.jpg',
         },
         {
-            id: 1,
-            title: 'Скидки %',
-            text: 'Арматура 5*5, Уголок',
-            image: 'https://in-rating.ru/space/wp-content/uploads/2023/03/Les-trois-mousquetaires-DArtagnan-9-1200.jpg',
+            id: 2,
+            title: 'Скидки %фывы',
+            text: ' 5*5, Уголок',
+            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG3cDrxffR5cmwyG9hZ5rplRGEu1-Csk7e2csIuWJM1g&s',
         },
         {
-            id: 1,
+            id: 3,
             title: ' 15%',
             text: 'Арматура 5*5, Уголок',
-            image: 'https://avatars.mds.yandex.net/get-znatoki/1548967/2a0000016cc241be5ba3b55cc281e4c2fa14/w480',
+            image: 'https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2425.jpg',
         }
     ]
 

@@ -15,13 +15,15 @@ import { imageReducer } from './slices/images/images';
 import { blockReducer } from './slices/blocks/block';
 import { cardReducer } from './slices/cards/cards';
 import { cardbyidReducer } from './slices/cardbyid/cardbyid';
+import { itemReducer } from './slices/items/items';
 
 
 const rootReducer = combineReducers({
 	image: imageReducer,
 	block: blockReducer,
     card: cardReducer,
-	cardbyid: cardbyidReducer
+	cardbyid: cardbyidReducer,
+	item: itemReducer,
 });
 
 const persistConfig = {
