@@ -1,14 +1,14 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import './UgolokPage.css';
+import './TubePage.css';
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
 import { useEffect } from 'react';
 import { getItemsApi } from '../../services/redux/slices/items/items';
 import { ItemList } from '../../components/Item/ItemList';
 
-export const UgolokPage: FC = () => {
+export const TubePage: FC = () => {
     const dispatch = useAppDispatch();
-    const items = useAppSelector((state) => state.item.items[1])
+    const items = useAppSelector((state) => state.item.items[3])
 
     console.log(items)
 
@@ -17,8 +17,8 @@ export const UgolokPage: FC = () => {
     }, []);
 
     return (
-        <section className='ugolok-page'>
-            <h2 className='ugolok-page__title'>{items.title}</h2>
+        <section className='tube-page'>
+            <h2 className='tube-page__title'>{items.title}</h2>
             <ItemList data={items.data} id={items.id}/>
         </section>
     )

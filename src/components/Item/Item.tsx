@@ -1,5 +1,5 @@
 import './Item.css';
-import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
+import { useAppDispatch } from '../../services/typeHooks';
 import { useNavigate } from 'react-router';
 import { BinButton } from '../BinButton/BinButton';
 import { Like } from '../Like/Like';
@@ -10,7 +10,6 @@ import { IItembyid } from '../../types/Items.types';
 export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
-    console.log(id);
 
     const handleClickImage = () => {
         navigate('/itempage');

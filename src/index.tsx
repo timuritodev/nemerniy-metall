@@ -16,6 +16,7 @@ import { BalkaPage } from './pages/BalkaPage/BalkaPage';
 import { UgolokPage } from './pages/UgolokPage/UgolokPage';
 import { ShvellerPage } from './pages/ShvellerPage/ShvellerPage';
 import { ItemPage } from './pages/ItemPage/ItemPage';
+import { TubePage } from './pages/TubesPage/TubePage';
 
 const Root: FC = () => {
 
@@ -31,6 +32,7 @@ const Root: FC = () => {
           <Route path="/balka-page" element={<BalkaPage />} />
           <Route path="/ugolok-page" element={<UgolokPage />} />
           <Route path="/shveller-page" element={<ShvellerPage />} />
+          <Route path="/tube-page" element={<TubePage />} />
         </Route>
       </Routes>
     </div>

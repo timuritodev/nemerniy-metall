@@ -13,6 +13,9 @@ export const Block = ({ data }: { data: IBlock }) => {
         } else if (data.title === "Швеллер") {
             navigate('/shveller-page');
         }
+        else if (data.title === "Трубы") {
+            navigate('/tube-page');
+        }
     };
 
     return (

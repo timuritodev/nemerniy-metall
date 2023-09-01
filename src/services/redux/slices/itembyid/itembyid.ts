@@ -16,23 +16,6 @@ export const getItembyidApi = createAsyncThunk(
     }
 );
 
-// export const getMoviebyidTokenApi = createAsyncThunk(
-// 	'@@moviebyid/getMoviebyidToken',
-// 	async (
-// 		arg: { id: number; itemId: number },
-// 		{ fulfillWithValue, rejectWithValue }
-// 	) => {
-// 		const { id, itemId } = arg;
-// 		try {
-// 			const response = await getMoviebyidToken(filmId, token);
-// 			const json = await response;
-// 			return fulfillWithValue(json);
-// 		} catch (error: unknown) {
-// 			return rejectWithValue(error);
-// 		}
-// 	}
-// );
-
 const initialState: IItembyidState = {
     status: 'idle',
     error: '',

@@ -1,4 +1,4 @@
-.shveller-page {
+.tube-page {
     display: flex;
     flex-direction: column;
     background-color: #fff;
@@ -9,7 +9,7 @@
     flex-wrap: wrap;
 }
 
-.shveller-page__title {
+.tube-page__title {
     background-color: #cdc9c96e;
     font-size: 40px;
     line-height: 108%;
