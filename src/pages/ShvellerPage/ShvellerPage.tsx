@@ -20,7 +20,7 @@ export const ShvellerPage: FC = () => {
     return (
         <section className='shveller-page'>
             <h2 className='shveller-page__title'>{items.title}</h2>
-            <ItemList data={items.data} />
+            <ItemList data={items.data} id={items.id}/>
         </section>
     )
 }

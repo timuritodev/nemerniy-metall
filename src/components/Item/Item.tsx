@@ -7,13 +7,14 @@ import { getItembyidApi } from '../../services/redux/slices/itembyid/itembyid';
 import { IItembyid } from '../../types/Items.types';
 
 
-export const Item = ({ data, key }: { data: IItembyid, key: number }) => {
+export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
+    console.log(id);
 
     const handleClickImage = () => {
         navigate('/itempage');
-        dispatch(getItembyidApi({ id: key, itemId: data.itemId }));
+        dispatch(getItembyidApi({ id: id, itemId: data.itemId }));
     };
 
     return (

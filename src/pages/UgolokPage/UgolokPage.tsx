@@ -20,7 +20,7 @@ export const UgolokPage: FC = () => {
     return (
         <section className='ugolok-page'>
             <h2 className='ugolok-page__title'>{items.title}</h2>
-            <ItemList data={items.data} />
+            <ItemList data={items.data} id={items.id}/>
         </section>
     )
 }

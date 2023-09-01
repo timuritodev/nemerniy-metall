@@ -13,6 +13,7 @@ export interface IItemState {
   
   export interface IItemProps {
 	data: IItembyid[];
+    id: number;
 }
 
 export interface IItembyid {

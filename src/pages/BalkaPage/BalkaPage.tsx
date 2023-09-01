@@ -19,7 +19,7 @@ export const BalkaPage: FC = () => {
     return (
         <section className='balka-page'>
             <h2 className='balka-page__title'>{items.title}</h2>
-            <ItemList data={items.data} />
+            <ItemList data={items.data} id={items.id}/>
         </section>
     )
 }
