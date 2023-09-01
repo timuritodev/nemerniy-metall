@@ -3,8 +3,8 @@ import './BalkaPage.css';
 import { FC } from 'react';
 import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
 import { useEffect } from 'react';
-import { CardList } from '../../components/Card/CardList';
 import { getItemsApi } from '../../services/redux/slices/items/items';
+import { ItemList } from '../../components/Item/ItemList';
 
 export const BalkaPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -19,7 +19,7 @@ export const BalkaPage: FC = () => {
     return (
         <section className='balka-page'>
             <h2 className='balka-page__title'>{items.title}</h2>
-            <CardList data={items.data} />
+            <ItemList data={items.data} />
         </section>
     )
 }

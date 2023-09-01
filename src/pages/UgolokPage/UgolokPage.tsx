@@ -5,6 +5,7 @@ import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
 import { useEffect } from 'react';
 import { CardList } from '../../components/Card/CardList';
 import { getItemsApi } from '../../services/redux/slices/items/items';
+import { ItemList } from '../../components/Item/ItemList';
 
 export const UgolokPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -19,7 +20,7 @@ export const UgolokPage: FC = () => {
     return (
         <section className='ugolok-page'>
             <h2 className='ugolok-page__title'>{items.title}</h2>
-            <CardList data={items.data} />
+            <ItemList data={items.data} />
         </section>
     )
 }

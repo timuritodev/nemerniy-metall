@@ -19,7 +19,7 @@ const initialState: IItemState = {
         title: '', 
         data: [
           {
-            id: 0,
+            itemId: 0,
             title: '',
             image: '',
             size: '',

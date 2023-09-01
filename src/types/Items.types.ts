@@ -8,9 +8,23 @@ export interface IItemState {
     _id: string,
     id: number,
     title: string;
-    data: Array<ICard>;
+    data: IItembyid[];
   }
   
+  export interface IItemProps {
+	data: IItembyid[];
+}
+
+export interface IItembyid {
+	itemId: number;
+	title: string;
+    image: string;
+    size: string;
+    price: string;
+    is_favorite?: boolean;
+    is_bin?: boolean;
+}
+
   export interface ICard {
     id: number;
     title: string;

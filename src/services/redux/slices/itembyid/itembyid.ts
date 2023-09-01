@@ -1,15 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getItembyid } from './itembyidAPI';
-
-export interface IItembyid {
-	itemId: number;
-	title: string;
-    image: string;
-    size: string;
-    price: string;
-    is_favorite?: boolean;
-    is_bin?: boolean;
-}
+import { IItembyid } from '../../../../types/Items.types';
 
 interface IItembyidState {
 	status: 'idle' | 'success' | 'loading' | 'failed';

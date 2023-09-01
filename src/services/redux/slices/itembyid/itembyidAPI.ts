@@ -1,6 +1,5 @@
-import { ICardbyid } from "../../../../types/Cardbyid.types";
+import { IItembyid } from "../../../../types/Items.types";
 import { API_BASE_URL } from "../../../../utils/constants";
-import { IItembyid } from "./itembyid";
 
 const checkRes = (res: Response) => {
 	if (res.ok) {
