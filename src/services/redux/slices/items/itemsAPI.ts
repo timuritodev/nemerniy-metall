@@ -1,5 +1,3 @@
-// import { ICard } from "../../../../types/Card.types";
-import { ICard } from "../../../../types/Card.types";
 import { IItem } from "../../../../types/Items.types";
 import { API_BASE_URL } from "../../../../utils/constants";
 

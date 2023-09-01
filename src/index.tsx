@@ -14,6 +14,7 @@ import { BinPage } from './pages/BinPage/BinPage';
 import { CardPage } from './pages/CardPage/CardPage';
 import { BalkaPage } from './pages/BalkaPage/BalkaPage';
 import { UgolokPage } from './pages/UgolokPage/UgolokPage';
+import { ShvellerPage } from './pages/ShvellerPage/ShvellerPage';
 
 const Root: FC = () => {
 
@@ -27,6 +28,7 @@ const Root: FC = () => {
           <Route path="/cardpage" element={<CardPage />} />
           <Route path="/balka-page" element={<BalkaPage />} />
           <Route path="/ugolok-page" element={<UgolokPage />} />
+          <Route path="/shveller-page" element={<ShvellerPage />} />
         </Route>
       </Routes>
     </div>

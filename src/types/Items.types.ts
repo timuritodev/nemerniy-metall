@@ -6,6 +6,7 @@ export interface IItemState {
   
   export interface IItem {
     _id: string,
+    id: number,
     title: string;
     data: Array<ICard>;
   }

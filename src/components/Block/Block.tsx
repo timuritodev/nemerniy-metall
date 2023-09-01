@@ -10,6 +10,8 @@ export const Block = ({ data }: { data: IBlock }) => {
             navigate('/balka-page');
         } else if (data.title === "Уголок") {
             navigate('/ugolok-page');
+        } else if (data.title === "Швеллер") {
+            navigate('/shveller-page');
         }
     };
 

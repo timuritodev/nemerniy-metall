@@ -15,6 +15,7 @@ const initialState: IItemState = {
     items: [
       {
         _id: '',
+        id: 0,
         title: '', 
         data: [
           {
