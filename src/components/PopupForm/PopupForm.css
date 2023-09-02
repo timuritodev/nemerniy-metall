@@ -1,0 +1,19 @@
+.popup-form {
+	display: flex;
+	width: 100vw;
+	height: 100vh;
+	position: fixed;
+	top: 0;
+	left: 0;
+	align-items: center;
+	justify-content: center;
+	background: rgba(0, 0, 0, 0.6);
+	visibility: hidden;
+	z-index: 2;
+	border-radius: 15px;
+}
+
+.popup-form_opened {
+	opacity: 1;
+	visibility: visible;
+}

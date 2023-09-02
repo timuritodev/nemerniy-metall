@@ -1,10 +1,12 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // src/components/PopupForm.tsx
-import React, { useState } from 'react';
+import './PopupForm.css';
+import React, { FC, useState } from 'react';
 import { getSubmitFormApi } from '../../services/redux/slices/form/form';
 import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
+import { PopupFormProps } from '../../types/Popup.types';
 
-const PopupForm: React.FC = () => {
+const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const dispatch = useAppDispatch();
 
     const [fullName, setFullName] = useState('');
@@ -33,7 +35,7 @@ const PopupForm: React.FC = () => {
     };
 
     return (
-        <div className="popup">
+		<div className={`popup-form ${isPopupOpen ? 'popup-form_opened' : ''}`}>
             <form onSubmit={handleSubmit}>
                 <input
                     type="text"
