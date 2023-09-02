@@ -1,5 +1,5 @@
 .popup-form {
-	display: flex;
+    display: flex;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
@@ -10,7 +10,13 @@
 	background: rgba(0, 0, 0, 0.6);
 	visibility: hidden;
 	z-index: 2;
-	border-radius: 15px;
+}
+
+.popup-form__container {
+    position: relative;
+	display: flex;
+	flex-direction: column;
+    background-color: red;
 }
 
 .popup-form_opened {

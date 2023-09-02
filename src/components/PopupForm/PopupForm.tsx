@@ -1,16 +1,15 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-// src/components/PopupForm.tsx
 import './PopupForm.css';
 import React, { FC, useState } from 'react';
-import { getSubmitFormApi } from '../../services/redux/slices/form/form';
-import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
+import { useAppDispatch } from '../../services/typeHooks';
 import { PopupFormProps } from '../../types/Popup.types';
+import { sendEmailApi } from '../../services/redux/slices/email/email';
 
 const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const dispatch = useAppDispatch();
 
-    const [fullName, setFullName] = useState('');
-    const [phoneNumber, setPhoneNumber] = useState('');
+    const [fio, setFio] = useState('');
+    const [telephone, setTelephone] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -19,37 +18,37 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
 
         // Perform validation here if needed
         const formData = {
-            fullName,
-            phoneNumber,
+            fio,
+            telephone,
             email,
             message,
         };
 
-        // dispatch(getSubmitFormApi(formData)); тут не знаю как правильно отправялть данные, оставил на потом
+        dispatch(sendEmailApi(formData)); // тут не знаю как правильно отправялть данные, оставил на потом
 
         // Clear form fields after submission
-        setFullName('');
-        setPhoneNumber('');
+        setFio('');
+        setTelephone('');
         setEmail('');
         setMessage('');
     };
 
     return (
-		<div className={`popup-form ${isPopupOpen ? 'popup-form_opened' : ''}`}>
-            <form onSubmit={handleSubmit}>
+        <div className={`popup-form ${isPopupOpen ? 'popup-form_opened' : ''}`}>
+            <form onSubmit={handleSubmit} className='popup-form__container'>
                 <input
                     type="text"
                     placeholder="Full Name (max 150 characters)"
-                    value={fullName}
-                    onChange={(e) => setFullName(e.target.value)}
+                    value={fio}
+                    onChange={(e) => setFio(e.target.value)}
                     maxLength={150}
                 />
                 <input
                     type="tel"
                     placeholder="Phone Number (Russian format)"
-                    value={phoneNumber}
-                    onChange={(e) => setPhoneNumber(e.target.value)}
-                    pattern="[+]7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    value={telephone}
+                    onChange={(e) => setTelephone(e.target.value)}
+                    // pattern="[+]7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
                 />
                 <input
                     type="email"
