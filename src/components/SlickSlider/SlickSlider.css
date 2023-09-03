@@ -15,6 +15,10 @@
     text-align: left;
 }
 
+.slick-slider_container {
+    position: relative;
+}
+
 div.slick-slider_container .slick-dots {
     bottom: 10px;
 }
