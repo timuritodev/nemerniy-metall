@@ -36,33 +36,43 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     return (
         <div className={`popup-form ${isPopupOpen ? 'popup-form_opened' : ''}`}>
             <form onSubmit={handleSubmit} className='popup-form__container'>
+                <h2 className='popup-form__title'>Обратная связь</h2>
                 <input
                     type="text"
-                    placeholder="Full Name (max 150 characters)"
+                    placeholder="ФИО"
                     value={fio}
                     onChange={(e) => setFio(e.target.value)}
                     maxLength={150}
+                    className='input__field'
                 />
                 <input
                     type="tel"
-                    placeholder="Phone Number (Russian format)"
+                    placeholder="Номер телефона"
                     value={telephone}
                     onChange={(e) => setTelephone(e.target.value)}
                     // pattern="[+]7 [0-9]{3} [0-9]{3}-[0-9]{2}-[0-9]{2}"
+                    className='input__field'
                 />
                 <input
                     type="email"
-                    placeholder="Email"
+                    placeholder="Почта"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
+                    className='input__field'
                 />
                 <textarea
-                    placeholder="Message (max 420 characters)"
+                    placeholder="Сообщений(максимум 520 символов)"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
-                    maxLength={420}
+                    maxLength={520}
+                    className='textarea__field'
                 />
-                <button type="submit">Submit</button>
+                <button type="submit" className='popup-form__button'>Отправить</button>
+                <button
+					className="popup-form__close"
+					type="button"
+					onClick={switchPopupTrailer}
+				/>
             </form>
         </div>
     );

@@ -4,7 +4,7 @@ import './ImgCard.css';
 
 export const ImgCard = ({ data }: { data: IImage }) => {
     return (
-        <section className='img'>
+        <div className='img'>
             <div className='img__overlay'>
                 <div>
                     <h2 className='img__title'>{data.title}</h2>
@@ -13,6 +13,6 @@ export const ImgCard = ({ data }: { data: IImage }) => {
                 <Button title={'Оставить заявку'} />
             </div>
             <img className='img__image' src={data.image} alt={data.image} />
-        </section>
+        </div>
     )
 }

@@ -1,5 +1,5 @@
 .popup-form {
-    display: flex;
+	display: flex;
 	width: 100vw;
 	height: 100vh;
 	position: fixed;
@@ -13,13 +13,66 @@
 }
 
 .popup-form__container {
-    position: relative;
+	position: relative;
 	display: flex;
 	flex-direction: column;
-    background-color: red;
+	justify-content: space-around;
+	width: 500px;
+	height: 560px;
+	padding: 10px 20px;
+	background-color: #fff;
+	border-radius: 10px;
 }
 
 .popup-form_opened {
 	opacity: 1;
 	visibility: visible;
+}
+
+.popup-form__title {
+	margin: 0;
+}
+
+.input__field {
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 0.5px solid #9ca3af;
+}
+
+.textarea__field {
+	resize: none;
+	min-height: 200px;
+	box-sizing: border-box;
+	font-size: 16px;
+	line-height: 18px;
+	padding: 10px 15px;
+	border-radius: 10px;
+	border: 0.5px solid #9ca3af;
+}
+.popup-form__button {
+	height: 50px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 400;
+    line-height: 138%;
+    font-size: 16px;
+    background-color: orange;
+    cursor: pointer;
+}
+
+.popup-form__close {
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: -50px;
+	right: -50px;
+	background-image: url(../../images/close-button.svg);
+	background-color: transparent;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+	border: none;
 }

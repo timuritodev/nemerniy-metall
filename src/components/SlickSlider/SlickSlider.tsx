@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
 import { IImage } from '../../types/Image.types';
 import { useEffect, useState } from 'react';
 import { getImagesApi } from '../../services/redux/slices/images/images';
+// import { Button } from '../Button/Button';
 
 
 export const SlickSlider: FC = () => {
@@ -43,6 +44,7 @@ export const SlickSlider: FC = () => {
                     <ImgCard data={item} key={item.id}/>
                 ))}
             </Slider>
+			{/* <Button title={'Обратная связь'} /> */}
         </div>
     );
 };
