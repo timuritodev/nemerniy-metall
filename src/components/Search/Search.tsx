@@ -28,7 +28,9 @@ const Search = ({
         dispatch(getCardsApi());
     }, [values]);
 
-    const filteredCards = cards;
+    const filteredCards = cards.filter((card) =>
+        card.title.toLowerCase().includes(values.toLowerCase())
+    );
 
     useEffect(() => {
         if (filteredCards?.length === 0) {
@@ -51,41 +53,43 @@ const Search = ({
 
     return (
         <section
-            className={`searchGeneral ${isOpenSearch && 'searchGeneral_open'}`}
+            className={`search ${isOpenSearch && 'search_open'}`}
         >
-            <div className="searchGeneral__films" id="searchGeneral__films">
+            <div className="search__cards" id="search__cards">
                 {!isFiltredCards ? (
                     filteredCards?.slice(0, 5).map((card: ICard) => (
                         <div
                             key={card.id}
                             // onClick={() => handleImgClick(card.id, user.token)}
-                            className="searchGeneral__film"
+                            className="search__card"
                         >
                             <img
-                                className="searchGeneral__film-poster"
+                                className="search__card-poster"
                                 src={card.image}
                                 alt=''
                             />
-                            <article className="searchGeneral__film-desc">
-                                <p className="searchGeneral__film-name">{card.title}</p>
-                                {/* <div className="searchGeneral__film-info">
-                                    <div className="searchGeneral__film-rating">
+                            <article className="search__card-desc">
+                                <p className="search__card-name">{card.title}</p>
+                                <div className="search__card-info">
+                                    <p className="search__card-year">{card.price}</p>
+                                    {/* 
+                                    <div className="search__card-rating">
                                         <RatedElement
                                             imdb={card.rating.rate_imdb}
                                             kinopoisk={card.rating.rate_kinopoisk}
                                             isSearch={true}
                                         />
                                     </div>
-                                    <p className="searchGeneral__film-genres">
+                                    <p className="search__card-genres">
                                         {card.genres.join(', ')}
                                     </p>
-                                    <p className="searchGeneral__film-year"> • {card.year}</p>
-                                </div> */}
+                                    <p className="search__card-year"> • {card.year}</p>*/}
+                                </div>
                             </article>
                         </div>
                     ))
                 ) : (
-                    <p className="searchGeneral__film-none">
+                    <p className="search__card-none">
                         По вашему запросу ничего не найдено
                     </p>
                 )}

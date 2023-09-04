@@ -1,4 +1,4 @@
-.searchGeneral {
+.search {
 	width: 525px;
 	height: auto;
 	border-radius: 5px;
@@ -10,11 +10,11 @@
 	z-index: 5;
 }
 
-.searchGeneral_open {
+.search_open {
 	display: block;
 }
 
-.searchGeneral__films {
+.search__cards {
 	display: flex;
 	flex-direction: column;
 	margin: 15px;
@@ -24,11 +24,11 @@
 	overflow-x: hidden;
 }
 
-.searchGeneral__films::-webkit-scrollbar {
+.search__cards::-webkit-scrollbar {
 	display: none;
 }
 
-.searchGeneral__film {
+.search__card {
 	width: 470px;
 	display: flex;
 	flex-direction: row;
@@ -36,33 +36,33 @@
 	text-decoration: none;
 }
 
-.searchGeneral__film:hover {
+.search__card:hover {
 	opacity: 0.6;
 	cursor: pointer;
 }
 
-.searchGeneral__film:last-child {
+.search__card:last-child {
 	margin-bottom: 0;
 }
 
-.searchGeneral__film-poster {
+.search__card-poster {
 	width: 37px;
 	height: 46px;
 	object-fit: cover;
 }
 
-.searchGeneral__film-desc {
+.search__card-desc {
 	display: flex;
 	flex-direction: column;
 	margin: 0 0 0 20px;
 }
 
-.searchGeneral__film-info {
+.search__card-info {
 	display: flex;
 	flex-direction: row;
 }
 
-.searchGeneral__film-name {
+.search__card-name {
 	margin: 0;
 	font-size: 16px;
 	font-weight: 400;
@@ -74,13 +74,13 @@
 	white-space: nowrap;
 }
 
-.searchGeneral__film-rating {
+.search__card-rating {
 	margin: 0;
 	position: relative;
 	top: -5px;
 }
 
-.searchGeneral__film-genres {
+.search__card-genres {
 	margin: 9px 0 0 0;
 	font-size: 16px;
 	font-weight: 400;
@@ -92,7 +92,7 @@
 	white-space: nowrap;
 }
 
-.searchGeneral__film-year {
+.search__card-year {
 	margin: 9px 0 0 8px;
 	font-size: 16px;
 	font-weight: 400;
@@ -100,7 +100,7 @@
 	color: #2b2f33;
 }
 
-.searchGeneral__film-none {
+.search__card-none {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 18px;
