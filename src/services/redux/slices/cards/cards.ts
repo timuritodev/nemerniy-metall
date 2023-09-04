@@ -10,14 +10,14 @@ export const getCardsApi = createAsyncThunk(
 );
 
 export const updateFavorite = createAsyncThunk(
-    '@@films/updateFavorite',
+    '@@card/updateFavorite',
     async ({ id, favorite }: { id: number; favorite: boolean }) => {
         return { id, favorite };
     }
 );
 
 export const updateBin = createAsyncThunk(
-    '@@films/updateBin',
+    '@@card/updateBin',
     async ({ id, bin }: { id: number; bin: boolean }) => {
         return { id, bin };
     }
@@ -27,7 +27,7 @@ const initialState: ICardState = {
     status: 'idle',
     error: '',
     cards: [
-        {   
+        {
             _id: '',
             id: 0,
             title: '',
@@ -35,7 +35,7 @@ const initialState: ICardState = {
             size: '',
             price: '',
             is_favorite: false,
-            is_bin: false, 
+            is_bin: false,
         },
     ],
     cardsFavorite: [
@@ -47,7 +47,7 @@ const initialState: ICardState = {
             size: '',
             price: '',
             is_favorite: false,
-            is_bin: false, 
+            is_bin: false,
         },
     ],
     cardsBin: [
@@ -59,7 +59,7 @@ const initialState: ICardState = {
             size: '',
             price: '',
             is_favorite: false,
-            is_bin: false, 
+            is_bin: false,
         },
     ],
 };
@@ -83,32 +83,6 @@ export const cardSlice = createSlice({
                     card.id === id ? { ...card, is_favorite: favorite } : card
                 );
                 state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
-                // state.cardsBin = state.cards.filter((card) => card.is_bin);
-                // if (favorite) {
-                //     const existingCardInFavorites = state.cardsFavorite.find((card) => card.id === id);
-                //     if (!existingCardInFavorites) {
-                //         const cardToAdd = state.cards.find((card) => card.id === id);
-                //         if (cardToAdd) {
-                //             state.cardsFavorite.push(cardToAdd);
-                //         }
-                //     }
-                // } else {
-                //     state.cardsFavorite = state.cardsFavorite.filter((card) => card.id !== id);
-                // }
-                // const existingCardInFavorites = state.cardsFavorite.find((card) => card.id === id);
-
-                // if (favorite) {
-                //     if (!existingCardInFavorites) {
-                //         const cardToAdd = state.cards.find((card) => card.id === id);
-                //         if (cardToAdd) {
-                //             state.cardsFavorite.push(cardToAdd);
-                //         }
-                //     }
-                // } else {
-                //     if (existingCardInFavorites) {
-                //         state.cardsFavorite = state.cardsFavorite.filter((card) => card.id !== id);
-                //     }
-                // }
             })
             .addCase(updateBin.fulfilled, (state, action) => {
                 state.status = 'success';
@@ -116,21 +90,44 @@ export const cardSlice = createSlice({
                 state.cards = state.cards.map((card) =>
                     card.id === id ? { ...card, is_bin: bin } : card
                 );
-                // state.cardsFavorite = state.cards.filter((card) => card.is_favorite);
                 state.cardsBin = state.cards.filter((card) => card.is_bin);
-                // if (bin) {
-                //     const existingCardInBin = state.cardsBin.find((card) => card.id === id);
-                //     if (!existingCardInBin) {
-                //         const cardToAdd = state.cards.find((card) => card.id === id);
-                //         if (cardToAdd) {
-                //             state.cardsBin.push(cardToAdd);
-                //         }
-                //     }
-                // } else {
-                //     state.cardsBin = state.cardsBin.filter((card) => card.id !== id);
-                // }
             });
     },
 });
 
 export const cardReducer = cardSlice.reducer;
+
+// export const getFavoritesCardsApi = createAsyncThunk(
+//     '@@card/favoriteCard',
+//     async () => {
+//         return getFavoriteCards();
+//     }
+// );
+
+// export const addToFavoritesApi = createAsyncThunk(
+//     '@@card/addFavorite',
+//     async (id: number, { fulfillWithValue, rejectWithValue }
+//     ) => {
+//         try {
+//             const response = await fetchAddToFavorites(id);
+//             const responseData = { status: response.status, ok: response.ok };
+//             return fulfillWithValue(responseData);
+//         } catch (error: unknown) {
+//             return rejectWithValue(error);
+//         }
+//     }
+// );
+
+// export const removeFromFavoritesApi = createAsyncThunk(
+//     '@@card/removeFavorite',
+//     async (id: number, { fulfillWithValue, rejectWithValue }
+//     ) => {
+//         try {
+//             const response = await fetchRemoveToFavorites(id);
+//             const responseData = { status: response.status, ok: response.ok };
+//             return fulfillWithValue(responseData);
+//         } catch (error: unknown) {
+//             return rejectWithValue(error);
+//         }
+//     }
+// );

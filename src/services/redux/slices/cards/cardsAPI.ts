@@ -10,15 +10,27 @@ const checkRes = (res: Response) => {
     }
 };
 
-const fetchData = (url: string) => {
+export const fetchData = (url: string, method: string) => {
     return fetch(url, {
-        method: 'GET',
+        method,
         headers: {
             'Content-Type': 'application/json',
         },
     }).then((res) => checkRes(res));
 };
 
+// export const fetchAddToFavorites = (id: number): Promise<Response> => {
+//     return fetchData(`${API_BASE_URL}/cards/${id}/favorite`, 'POST');
+// };
+
+// export const fetchRemoveToFavorites = (id: number): Promise<Response> => {
+//     return fetchData(`${API_BASE_URL}/cards/${id}/favorite`, 'DELETE');
+// };
+
+// export const getFavoriteCards = (): Promise<[]> => {
+//     return fetchData(`${API_BASE_URL}/cards/favorites`, 'GET');
+// };
+
 export const getCards = (): Promise<Array<ICard>> => {
-    return fetchData(`${API_BASE_URL}/cards`);
+    return fetchData(`${API_BASE_URL}/cards`, 'GET');
 };
