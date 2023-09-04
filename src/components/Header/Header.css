@@ -1,4 +1,9 @@
 .header {
+	/* position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 1000; */
 	display: flex;
 	align-items: center;
 	height: 47px;
@@ -6,7 +11,7 @@
 	max-width: 1440px;
 	justify-content: space-between;
 	margin: 0 auto;
-	padding: 20px 0 0 0;
+	padding: 20px 0 20px 0;
 }
 
 .header__logo {
