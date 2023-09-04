@@ -1,13 +1,37 @@
 import { Link, useNavigate } from 'react-router-dom';
 import './Header.css';
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import pic from "../../images/logoza.ru-PhotoRoom 1.svg";
 import search from "../../images/search.svg";
 import heart from "../../images/hearts.png"
 import cart from "../../images/cart.png"
+import Search from '../Search/Search';
 
 export const Header: FC = () => {
     const navigate = useNavigate();
+
+    const [values, setValues] = useState('');
+
+    const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const target = event.target;
+        const value = target.value;
+        setValues(value);
+    };
+
+    const [isOpenSearch, setIsOpenSearch] = useState(false);
+
+    useEffect(() => {
+        if (values.length > 0) {
+            setIsOpenSearch(true);
+        }
+        if (values.length < 1) {
+            setIsOpenSearch(false);
+        }
+    }, [values]);
+
+    const setSearchClose = () => {
+        setIsOpenSearch(false);
+    };
 
     const handleClickFav = () => {
         navigate('/favorites')
@@ -22,7 +46,7 @@ export const Header: FC = () => {
     }
     return (
         <header className='header'>
-            <img className='header__logo' src={pic} alt={pic} onClick={handleClickLogo}/>
+            <img className='header__logo' src={pic} alt={pic} onClick={handleClickLogo} />
             <div className="header__container">
                 <form className="header__search">
                     <input
@@ -31,8 +55,9 @@ export const Header: FC = () => {
                         name="name"
                         type="text"
                         placeholder="Поиск по продукции"
-                        // onChange={handleChange}
-                        // onBlur={setSearchClose}
+                        onChange={handleChange}
+                        onBlur={setSearchClose}
+                        value={values}
                         autoComplete='off'
                     />
                     <Link to="/search-result" className="header__search-button">
@@ -42,6 +67,11 @@ export const Header: FC = () => {
                             alt="Кнопка поиска"
                         />
                     </Link>
+                    <Search
+                        isOpenSearch={isOpenSearch}
+                        isClose={setSearchClose}
+                        values={values}
+                    />
                 </form>
             </div>
             <div className='button__container'>
