@@ -1,22 +1,49 @@
 import './BinButton.css';
-import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
+import { useAppDispatch } from '../../services/typeHooks';
 import { updateBin } from '../../services/redux/slices/cards/cards';
 
 export const BinButton = ({ data }: { data: any }) => {
-    const dispatch = useAppDispatch();
-    const id = data.id;
+  const dispatch = useAppDispatch();
+  const id = data.id;
+  const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`
 
-    const cardsBin = useAppSelector(
-        (state) => state.card.cards.find((card) => card.id === id)?.is_bin
-    );
+  // Получаем массив карточек в корзине из localStorage
+  const cartItemsJson = localStorage.getItem('cartItems');
+  const cartItemNamesJson = localStorage.getItem('cartItemNames'); // Добавляем для хранения имен
 
-    const handleClickBin = () => {
-        dispatch(updateBin({ bin: !cardsBin, id }));
-    };
+  // Проверяем, есть ли значения в localStorage
+  const cartItems = cartItemsJson ? JSON.parse(cartItemsJson) : [];
+  const cartItemNames = cartItemNamesJson ? JSON.parse(cartItemNamesJson) : [];
 
-    const typesText = data.is_bin ? '-' : 'В корзину';
+  // Проверяем, есть ли текущая карточка в корзине
+  const isInCart = cartItems.includes(id);
 
-    return (
-        <button className='card__button' onClick={handleClickBin}>{typesText}</button>
-    )
-}
+  const handleClickBin = () => {
+    // Инвертируем статус корзины
+    const newIsInCart = !isInCart;
+
+    // Отправляем обновленное состояние на сервер или в хранилище Redux
+    dispatch(updateBin({ bin: newIsInCart, id }));
+
+    // Обновляем массив карточек в корзине в localStorage
+    if (newIsInCart) {
+      cartItems.push(id);
+      cartItemNames.push(cardName); // Добавляем имя карточки в массив имен
+    } else {
+      const indexToRemove = cartItems.indexOf(id);
+      if (indexToRemove !== -1) {
+        cartItems.splice(indexToRemove, 1);
+        cartItemNames.splice(indexToRemove, 1); // Удаляем имя карточки из массива имен
+      }
+    }
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    localStorage.setItem('cartItemNames', JSON.stringify(cartItemNames)); // Сохраняем массив имен
+  };
+
+  const typesText = isInCart ? '-' : 'В корзину';
+
+  return (
+    <button className='card__button' onClick={handleClickBin}>{typesText}</button>
+  );
+};

@@ -10,8 +10,6 @@ export const UgolokPage: FC = () => {
     const dispatch = useAppDispatch();
     const items = useAppSelector((state) => state.item.items[1])
 
-    console.log(items)
-
     useEffect(() => {
         dispatch(getItemsApi());
     }, []);

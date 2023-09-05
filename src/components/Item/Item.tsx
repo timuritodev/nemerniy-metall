@@ -2,9 +2,10 @@ import './Item.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import { useNavigate } from 'react-router';
 import { BinButton } from '../BinButton/BinButton';
-import { Like } from '../Like/Like';
+// import { Like } from '../Like/Like';
 import { getItembyidApi } from '../../services/redux/slices/itembyid/itembyid';
 import { IItembyid } from '../../types/Items.types';
+import { Dislike } from '../Dislike/Dislike';
 
 
 export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
@@ -19,7 +20,7 @@ export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
     return (
         <section className='item'>
             <img className='item__image' src={data.image} alt={data.image} onClick={handleClickImage} />
-            <Like data={data} />
+            <Dislike data={data} />
             <div className='item__container'>
                 <div className='item__text-container'>
                     <h2 className='item__title'>{data.title}</h2>

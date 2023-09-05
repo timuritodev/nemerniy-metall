@@ -10,8 +10,6 @@ export const BalkaPage: FC = () => {
     const dispatch = useAppDispatch();
     const items = useAppSelector((state) => state.item.items[0])
 
-    console.log(items)
-
     useEffect(() => {
         dispatch(getItemsApi());
     }, []);
