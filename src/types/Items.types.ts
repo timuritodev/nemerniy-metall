@@ -8,9 +8,9 @@ export interface IItem {
   _id: string,
   id: number,
   title: string;
-  data: [];
-  // itemsFavorite: [],
-  // itemsBin: [],
+  data: IItembyid[];
+  itemsFavorite: IItembyid[],
+  itemsBin: IItembyid[],
 }
 
 export interface IItemProps {
