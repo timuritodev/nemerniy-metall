@@ -24,11 +24,11 @@ export const Nav: FC = () => {
     return (
         <nav className={`nav ${isNavVisible ? 'visible' : 'hidden'}`}>
             <div className='links__container'>
-                <Link to="/service" className='nav__link'>Услуги</Link>
-                <Link to="/delivery" className='nav__link'>Доставка и самовывоз</Link>
-                <Link to="/payment" className='nav__link'>Оплата</Link>
-                <Link to="/return" className='nav__link'>Возврат</Link>
-                <Link to="/contacts" className='nav__link'>Контакты</Link>
+                <Link to="/service-page" className='nav__link'>Услуги</Link>
+                <Link to="/delivery-page" className='nav__link'>Доставка и самовывоз</Link>
+                <Link to="/payment-page" className='nav__link'>Оплата</Link>
+                <Link to="/return-page" className='nav__link'>Возврат</Link>
+                <Link to="/contacts-page" className='nav__link'>Контакты</Link>
             </div>
             <div className='telephone__container'>
                 <Telephone />

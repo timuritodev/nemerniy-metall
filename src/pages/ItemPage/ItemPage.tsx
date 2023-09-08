@@ -1,7 +1,7 @@
 import './ItemPage.css';
 import { useAppSelector } from '../../services/typeHooks';
-import { BinButton } from '../../components/BinButton/BinButton';
-import { Like } from '../../components/Like/Like';
+import { BinButton2 } from '../../components/BinButton2/BinButton2';
+import { Dislike } from '../../components/Dislike/Dislike';
 
 export const ItemPage = () => {
     const item = useAppSelector((state) => state.itembyid.itembyid)
@@ -16,8 +16,8 @@ export const ItemPage = () => {
                 </div>
                 <div className='item-page__price-container'>
                     <p className='item-page__price'>{item.price}</p>
-                    <BinButton data={item} />
-                    <Like data={item} />
+                    <BinButton2 data={item} />
+                    <Dislike data={item} />
                 </div>
             </div>
         </section>

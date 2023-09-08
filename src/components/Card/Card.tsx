@@ -13,7 +13,7 @@ export const Card = ({ data }: { data: any }) => {
     const id = data.id;
 
     const handleClickImage = () => {
-        navigate('/cardpage');
+        navigate('/card-page');
         dispatch(getCardbyidApi(id))
     };
 

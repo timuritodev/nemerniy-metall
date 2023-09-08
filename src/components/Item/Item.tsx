@@ -14,7 +14,7 @@ export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
     const navigate = useNavigate();
 
     const handleClickImage = () => {
-        navigate('/itempage');
+        navigate('/item-page');
         dispatch(getItembyidApi({ id: id, itemId: data.itemId }));
     };
 
