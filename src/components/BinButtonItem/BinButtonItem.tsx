@@ -1,8 +1,8 @@
-import './BinButton2.css';
+import './BinButtonItem.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import { updateBinItem } from '../../services/redux/slices/items/items';
 
-export const BinButton2 = ({ data }: { data: any }) => {
+export const BinButtonItem = ({ data }: { data: any }) => {
     const dispatch = useAppDispatch();
     const id = data.itemId;
     const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`

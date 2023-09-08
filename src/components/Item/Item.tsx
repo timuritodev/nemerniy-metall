@@ -5,8 +5,8 @@ import { useNavigate } from 'react-router';
 // import { Like } from '../Like/Like';
 import { getItembyidApi } from '../../services/redux/slices/itembyid/itembyid';
 import { IItembyid } from '../../types/Items.types';
-import { Dislike } from '../Dislike/Dislike';
-import { BinButton2 } from '../BinButton2/BinButton2';
+import { LikeItem } from '../LikeItem/LikeItem';
+import { BinButtonItem } from '../BinButtonItem/BinButtonItem';
 
 
 export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
@@ -21,7 +21,7 @@ export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
     return (
         <section className='item'>
             <img className='item__image' src={data.image} alt={data.image} onClick={handleClickImage} />
-            <Dislike data={data} />
+            <LikeItem data={data} />
             <div className='item__container'>
                 <div className='item__text-container'>
                     <h2 className='item__title'>{data.title}</h2>
@@ -29,7 +29,7 @@ export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
                 </div>
                 <div className='item__price_container'>
                     <p className='item__price'>{data.price}</p>
-                    <BinButton2 data={data} />
+                    <BinButtonItem data={data} />
                 </div>
             </div>
         </section>

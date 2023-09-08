@@ -1,10 +1,10 @@
-import './Dislike.css';
+import './LikeItem.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import heart from '../../images/heart-card.png';
 import heart_clicked from '../../images/heart-card-clicked.png';
 import { updateFavoriteItem } from '../../services/redux/slices/items/items';
 
-export const Dislike = ({ data }: { data: any }) => {
+export const LikeItem = ({ data }: { data: any }) => {
   const dispatch = useAppDispatch();
   const id = data.itemId;
 
