@@ -77,3 +77,7 @@
 	margin: 0;
 	border: none;
 }
+
+.popup-form__items {
+	color: #000;
+}

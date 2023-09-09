@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import './PopupForm.css';
-import React, { FC, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../services/typeHooks';
 import { PopupFormProps } from '../../types/Popup.types';
 import { sendEmailApi } from '../../services/redux/slices/email/email';
@@ -12,21 +12,30 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const [telephone, setTelephone] = useState('');
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
+    const [items, setItems] = useState('')
+
+    useEffect(() => {
+        const cartItemNamesJson = localStorage.getItem('cartItemNames2');
+        if (cartItemNamesJson) {
+            const cartItemNames = JSON.parse(cartItemNamesJson);
+            const joinedMessage = cartItemNames.join('\n');
+            setItems(joinedMessage);
+        }
+    }, []);
 
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        // Perform validation here if needed
         const formData = {
             fio,
             telephone,
             email,
             message,
+            items,
         };
 
-        dispatch(sendEmailApi(formData)); // тут не знаю как правильно отправялть данные, оставил на потом
+        dispatch(sendEmailApi(formData));
 
-        // Clear form fields after submission
         setFio('');
         setTelephone('');
         setEmail('');
@@ -67,12 +76,22 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
                     maxLength={520}
                     className='textarea__field'
                 />
+                {items && (
+                    <div className='popup-form__items'>
+                        <h3>Выбранные элементы:</h3>
+                        <ul>
+                            {items.split('\n').map((item, index) => (
+                                <li key={index}>{item}</li>
+                            ))}
+                        </ul>
+                    </div>
+                )}
                 <button type="submit" className='popup-form__button'>Отправить</button>
                 <button
-					className="popup-form__close"
-					type="button"
-					onClick={switchPopupTrailer}
-				/>
+                    className="popup-form__close"
+                    type="button"
+                    onClick={switchPopupTrailer}
+                />
             </form>
         </div>
     );
