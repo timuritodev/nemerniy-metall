@@ -7,13 +7,15 @@ import { ISlider } from '../../types/Slider.types';
 import { Item } from '../Item/Item';
 
 export const ItemsSlider: FC<ISlider> = ({ title, items, id }) => {
+    const slidesToShow = items.length > 4 ? 4 : items.length;
+	// const slidesToScroll = slidesToShow;
 
     const settings = {
         dots: false,
         infinite: true,
         speed: 500,
-        slidesToShow: 4,
-        slidesToScroll: 0,
+        slidesToShow: slidesToShow,
+        slidesToScroll: 2,
         arrows: true,
     };
 

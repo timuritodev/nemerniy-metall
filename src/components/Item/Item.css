@@ -1,18 +1,19 @@
 .itemlist {
     display: flex;
     flex-direction: row;
-    gap:10px;
-    max-width: 920px;
+    gap: 10px;
+    max-width: 1260px;
     flex-wrap: wrap;
 }
 
 .item {
     display: flex;
     flex-direction: column;
-	border: 1px solid #262422be;
+    border: 1px solid #262422be;
     border-radius: 15px;
     overflow: hidden;
     position: relative;
+    width: 296px;
 }
 
 .item__image {
@@ -32,10 +33,12 @@
 .item__container {
     margin: 10px 0 10px 10px;
 }
+
 .item__text-container {
-    height: 150px;
+    height: 90px;
 }
-.item__title{
+
+.item__title {
     margin: 0;
     font-weight: 600;
     color: #2b344a;

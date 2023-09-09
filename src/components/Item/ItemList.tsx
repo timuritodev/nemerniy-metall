@@ -5,7 +5,7 @@ import { FC } from 'react';
 
 export const ItemList: FC<IItemProps> = ({ data, id }) => {
     return (
-        <section className='cardlist'>
+        <section className='itemlist'>
             {data.map((item) => <Item key={item.itemId} data={item} id={id}/>)}
         </section>
     )

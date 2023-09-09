@@ -1,6 +1,6 @@
-.item-slider__container {
-	/* margin: 0 120px 100px; */
-}
+/* .item-slider__container {
+	margin: 0 120px 100px;
+} */
 
 .item-slider__title {
 	margin: 0 0 45px;
@@ -13,7 +13,7 @@
 }
 
 .item-slider {
-	max-width: 1110px;
+	max-width: 1280px;
 	display: flex;
 	justify-content: center;
 	text-align: left;
