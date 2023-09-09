@@ -15,7 +15,7 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const [items, setItems] = useState('')
 
     useEffect(() => {
-        const cartItemNamesJson = localStorage.getItem('cartItemNames2');
+        const cartItemNamesJson = localStorage.getItem('cartItemNames');
         if (cartItemNamesJson) {
             const cartItemNames = JSON.parse(cartItemNamesJson);
             const joinedMessage = cartItemNames.join('\n');
@@ -26,6 +26,7 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
+        switchPopupTrailer();
         const formData = {
             fio,
             telephone,
@@ -78,10 +79,10 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
                 />
                 {items && (
                     <div className='popup-form__items'>
-                        <h3>Выбранные элементы:</h3>
-                        <ul>
+                        <h3 className='popup-form__items__title'>Выбранные товары:</h3>
+                        <ul className='popup-form__items__list'>
                             {items.split('\n').map((item, index) => (
-                                <li key={index}>{item}</li>
+                                <li className="popup-form__items__lists" key={index}>{item}</li>
                             ))}
                         </ul>
                     </div>

@@ -18,7 +18,7 @@
 	flex-direction: column;
 	justify-content: space-around;
 	width: 500px;
-	height: 560px;
+	/* height: 560px; */
 	padding: 10px 20px;
 	background-color: #fff;
 	border-radius: 10px;
@@ -30,11 +30,13 @@
 }
 
 .popup-form__title {
+	font-family: Unbounded;
 	margin: 0;
 	color: #000;
 }
 
 .input__field {
+	margin: 15px 0 0 0;
 	box-sizing: border-box;
 	font-size: 16px;
 	line-height: 18px;
@@ -44,6 +46,7 @@
 }
 
 .textarea__field {
+	margin: 15px 0 0 0;
 	resize: none;
 	min-height: 200px;
 	box-sizing: border-box;
@@ -80,4 +83,12 @@
 
 .popup-form__items {
 	color: #000;
+}
+
+.popup-form__items__title {
+	font-family: Unbounded;
+}
+
+.popup-form__items__list {
+	padding: 0 20px;
 }

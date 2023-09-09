@@ -18,7 +18,14 @@ export const MainPage: FC = () => {
     useEffect(() => {
         dispatch(getBlocksApi());
         dispatch(getCardsApi());
-        dispatch(getItemsApi())
+    }, []);
+
+    useEffect(() => {
+        const isItemsFetched = localStorage.getItem('isItemsFetched');
+        if (!isItemsFetched) {
+            dispatch(getItemsApi());
+            localStorage.setItem('isItemsFetched', 'true');
+        }
     }, []);
 
     return (
