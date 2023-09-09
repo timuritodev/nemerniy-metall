@@ -1,49 +1,57 @@
 import './BinButton.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import { updateBin } from '../../services/redux/slices/cards/cards';
+import { useLocation } from 'react-router';
+import { updateBinItem } from '../../services/redux/slices/items/items';
 
 export const BinButton = ({ data }: { data: any }) => {
-  const dispatch = useAppDispatch();
-  const id = data.id;
-  const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`
+    const location = useLocation();
+    const dispatch = useAppDispatch();
+    const id = location.pathname === '/' ? data.id : data.itemId;
 
-  // Получаем массив карточек в корзине из localStorage
-  const cartItemsJson = localStorage.getItem('cartItems');
-  const cartItemNamesJson = localStorage.getItem('cartItemNames'); // Добавляем для хранения имен
+    const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`
 
-  // Проверяем, есть ли значения в localStorage
-  const cartItems = cartItemsJson ? JSON.parse(cartItemsJson) : [];
-  const cartItemNames = cartItemNamesJson ? JSON.parse(cartItemNamesJson) : [];
+    // Получаем массив карточек в корзине из localStorage
+    const cartItemsJson = localStorage.getItem('cartItems');
+    const cartItemNamesJson = localStorage.getItem('cartItemNames'); // Добавляем для хранения имен
 
-  // Проверяем, есть ли текущая карточка в корзине
-  const isInCart = cartItems.includes(id);
+    // Проверяем, есть ли значения в localStorage
+    const cartItems = cartItemsJson ? JSON.parse(cartItemsJson) : [];
+    const cartItemNames = cartItemNamesJson ? JSON.parse(cartItemNamesJson) : [];
 
-  const handleClickBin = () => {
-    // Инвертируем статус корзины
-    const newIsInCart = !isInCart;
+    // Проверяем, есть ли текущая карточка в корзине
+    const isInCart = cartItems.includes(id);
 
-    // Отправляем обновленное состояние на сервер или в хранилище Redux
-    dispatch(updateBin({ bin: newIsInCart, id }));
+    const handleClickBin = () => {
+        // Инвертируем статус корзины
+        const newIsInCart = !isInCart;
 
-    // Обновляем массив карточек в корзине в localStorage
-    if (newIsInCart) {
-      cartItems.push(id);
-      cartItemNames.push(cardName); // Добавляем имя карточки в массив имен
-    } else {
-      const indexToRemove = cartItems.indexOf(id);
-      if (indexToRemove !== -1) {
-        cartItems.splice(indexToRemove, 1);
-        cartItemNames.splice(indexToRemove, 1); // Удаляем имя карточки из массива имен
-      }
-    }
+        // Отправляем обновленное состояние на сервер или в хранилище Redux
+        if (location.pathname === '/') {
+            dispatch(updateBin({ bin: newIsInCart, id }));
+        } else {
+            dispatch(updateBinItem({ bin: newIsInCart, id }));
+        }
 
-    localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    localStorage.setItem('cartItemNames', JSON.stringify(cartItemNames)); // Сохраняем массив имен
-  };
+        // Обновляем массив карточек в корзине в localStorage
+        if (newIsInCart) {
+            cartItems.push(id);
+            cartItemNames.push(cardName); // Добавляем имя карточки в массив имен
+        } else {
+            const indexToRemove = cartItems.indexOf(id);
+            if (indexToRemove !== -1) {
+                cartItems.splice(indexToRemove, 1);
+                cartItemNames.splice(indexToRemove, 1); // Удаляем имя карточки из массива имен
+            }
+        }
 
-  const typesText = isInCart ? '-' : 'В корзину';
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItemNames', JSON.stringify(cartItemNames)); // Сохраняем массив имен
+    };
 
-  return (
-    <button className='card__button' onClick={handleClickBin}>{typesText}</button>
-  );
+    const typesText = isInCart ? '-' : 'В корзину';
+
+    return (
+        <button className='card__button' onClick={handleClickBin}>{typesText}</button>
+    );
 };

@@ -1,12 +1,12 @@
 import './Item.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import { useNavigate } from 'react-router';
-// import { BinButton } from '../BinButton/BinButton';
+import { BinButton } from '../BinButton/BinButton';
 // import { Like } from '../Like/Like';
 import { getItembyidApi } from '../../services/redux/slices/itembyid/itembyid';
 import { IItembyid } from '../../types/Items.types';
 import { LikeItem } from '../LikeItem/LikeItem';
-import { BinButtonItem } from '../BinButtonItem/BinButtonItem';
+// import { BinButtonItem } from '../BinButtonItem/BinButtonItem';
 
 
 export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
@@ -29,7 +29,7 @@ export const Item = ({ data, id }: { data: IItembyid, id: number }) => {
                 </div>
                 <div className='item__price_container'>
                     <p className='item__price'>{data.price}</p>
-                    <BinButtonItem data={data} />
+                    <BinButton data={data} />
                 </div>
             </div>
         </section>

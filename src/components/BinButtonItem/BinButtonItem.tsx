@@ -8,8 +8,8 @@ export const BinButtonItem = ({ data }: { data: any }) => {
     const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`
 
     // Получаем массив карточек в корзине из localStorage
-    const cartItemsJson = localStorage.getItem('cartItems2');
-    const cartItemNamesJson = localStorage.getItem('cartItemNames2'); // Добавляем для хранения имен
+    const cartItemsJson = localStorage.getItem('cartItems');
+    const cartItemNamesJson = localStorage.getItem('cartItemNames'); // Добавляем для хранения имен
 
     // Проверяем, есть ли значения в localStorage
     const cartItems = cartItemsJson ? JSON.parse(cartItemsJson) : [];
@@ -37,8 +37,8 @@ export const BinButtonItem = ({ data }: { data: any }) => {
             }
         }
 
-        localStorage.setItem('cartItems2', JSON.stringify(cartItems));
-        localStorage.setItem('cartItemNames2', JSON.stringify(cartItemNames)); // Сохраняем массив имен
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        localStorage.setItem('cartItemNames', JSON.stringify(cartItemNames)); // Сохраняем массив имен
     };
 
 
