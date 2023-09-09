@@ -8,6 +8,7 @@ import { getBlocksApi } from '../../services/redux/slices/blocks/block';
 import { BlockList } from '../../components/Block/BlockList';
 import { CardList } from '../../components/Card/CardList';
 import { getCardsApi } from '../../services/redux/slices/cards/cards';
+import { getItemsApi } from '../../services/redux/slices/items/items';
 
 export const MainPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -17,6 +18,7 @@ export const MainPage: FC = () => {
     useEffect(() => {
         dispatch(getBlocksApi());
         dispatch(getCardsApi());
+        dispatch(getItemsApi())
     }, []);
 
     return (

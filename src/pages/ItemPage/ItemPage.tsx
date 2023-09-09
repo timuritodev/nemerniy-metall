@@ -2,11 +2,27 @@ import './ItemPage.css';
 import { useAppSelector } from '../../services/typeHooks';
 import { BinButtonItem } from '../../components/BinButtonItem/BinButtonItem';
 import { LikeItem } from '../../components/LikeItem/LikeItem';
+import { ItemsSlider } from '../../components/ItemsSlider/ItemsSlider';
 
 export const ItemPage = () => {
     const item = useAppSelector((state) => state.itembyid.itembyid)
+    const balka = useAppSelector((state) => state.item.items[0])
+    const ugol = useAppSelector((state) => state.item.items[1])
+    const shveller = useAppSelector((state) => state.item.items[2])
+    const tube = useAppSelector((state) => state.item.items[3])
 
-    return (
+    const items =
+        item.title.startsWith("Балка")
+            ? balka
+            : item.title.startsWith("Угол")
+                ? ugol
+                : item.title.startsWith("Швеллер")
+                    ? shveller
+                    : item.title.startsWith("Труб")
+                        ? tube
+                        : balka
+
+return (
         <section className='item-page'>
             <div className='item-page__container'>
                 <img className='item-page__image' src={item.image} alt='pic' />
@@ -20,6 +36,7 @@ export const ItemPage = () => {
                     <LikeItem data={item} />
                 </div>
             </div>
+            <ItemsSlider title={'ada'} items={items.data} id={items.id} />
         </section>
     )
 }
