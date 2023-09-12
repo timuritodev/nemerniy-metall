@@ -24,6 +24,7 @@ export interface IItembyid {
   image: string;
   size: string;
   price: string;
+  quantity: number;
   is_favorite?: boolean;
   is_bin?: boolean;
 }

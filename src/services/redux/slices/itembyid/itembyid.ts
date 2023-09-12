@@ -25,6 +25,7 @@ const initialState: IItembyidState = {
         image: '',
         size: '',
         price: '',
+        quantity: 0,
         is_favorite: false,
         is_bin: false,
     },

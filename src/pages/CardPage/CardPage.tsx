@@ -13,6 +13,7 @@ export const CardPage = () => {
                 <div className='card-page__text-container'>
                     <h2 className='card-page__title'>{card.title}</h2>
                     <p className='card-page__size'>{card.size}</p>
+                    <p className='card-page__quantity'>{card.quantity}</p>
                 </div>
                 <div className='card-page__price-container'>
                     <p className='card-page__price'>{card.price}</p>

@@ -30,6 +30,7 @@ return (
                 <div className='item-page__text-container'>
                     <h2 className='item-page__title'>{item.title}</h2>
                     <p className='item-page__size'>{item.size}</p>
+                    <p className='item-page__quantity'>{item.quantity}</p>
                 </div>
                 <div className='item-page__price-container'>
                     <p className='item-page__price'>{item.price}</p>

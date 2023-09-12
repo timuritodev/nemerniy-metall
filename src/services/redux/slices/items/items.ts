@@ -38,6 +38,7 @@ const initialState: IItemState = {
           image: '',
           size: '',
           price: '',
+          quantity: 0,
           is_favorite: false,
           is_bin: false,
         }
@@ -49,6 +50,7 @@ const initialState: IItemState = {
           image: '',
           size: '',
           price: '',
+          quantity: 0,
           is_favorite: false,
           is_bin: false,
         }
@@ -60,6 +62,7 @@ const initialState: IItemState = {
           image: '',
           size: '',
           price: '',
+          quantity: 0,
           is_favorite: false,
           is_bin: false,
         }
