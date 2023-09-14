@@ -20,7 +20,7 @@ const Search = ({
     // const navigate = useNavigate();
 
     const cards = useAppSelector(
-        (state) => state.card.cards
+        (state) => state.allitems.allitems
     );
     const [isFiltredCards, setIsFiltredCards] = useState(false);
 

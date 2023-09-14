@@ -9,6 +9,7 @@ import { BlockList } from '../../components/Block/BlockList';
 import { CardList } from '../../components/Card/CardList';
 import { getCardsApi } from '../../services/redux/slices/cards/cards';
 import { getItemsApi } from '../../services/redux/slices/items/items';
+import { getAllItemsApi } from '../../services/redux/slices/allitems/allitems';
 
 export const MainPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -18,6 +19,7 @@ export const MainPage: FC = () => {
     useEffect(() => {
         dispatch(getBlocksApi());
         dispatch(getCardsApi());
+        dispatch(getAllItemsApi());
     }, []);
 
     useEffect(() => {

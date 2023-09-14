@@ -1,7 +1,6 @@
 import { ICard } from "../../../../types/Card.types";
 import { API_BASE_URL } from "../../../../utils/constants";
 
-
 const checkRes = (res: Response) => {
     if (res.ok) {
         return res.json();
@@ -19,6 +18,6 @@ export const fetchData = (url: string, method: string) => {
     }).then((res) => checkRes(res));
 };
 
-export const getCards = (): Promise<Array<ICard>> => {
-    return fetchData(`${API_BASE_URL}/cards`, 'GET');
+export const getAllitems = (): Promise<Array<ICard>> => {
+    return fetchData(`${API_BASE_URL}/allitems`, 'GET');
 };
