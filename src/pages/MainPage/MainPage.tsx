@@ -20,15 +20,16 @@ export const MainPage: FC = () => {
         dispatch(getBlocksApi());
         dispatch(getCardsApi());
         dispatch(getAllItemsApi());
+        dispatch(getItemsApi());
     }, []);
 
-    useEffect(() => {
-        const isItemsFetched = localStorage.getItem('isItemsFetched');
-        if (!isItemsFetched) {
-            dispatch(getItemsApi());
-            localStorage.setItem('isItemsFetched', 'true');
-        }
-    }, []);
+    // useEffect(() => {
+    //     const isItemsFetched = localStorage.getItem('isItemsFetched');
+    //     if (!isItemsFetched) {
+    //         dispatch(getItemsApi());
+    //         localStorage.setItem('isItemsFetched', 'true');
+    //     }
+    // }, []);
 
     return (
         <section className='main'>
