@@ -2,10 +2,11 @@
 import './Search.css';
 import { useAppSelector } from '../../services/typeHooks';
 import { useState, useEffect } from 'react';
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { useAppDispatch } from '../../services/typeHooks';
 import { getCardsApi } from '../../services/redux/slices/cards/cards';
 import { ICard } from '../../types/Card.types';
+import { getAllitembyidApi } from '../../services/redux/slices/allitembyid/allitembyid';
 
 const Search = ({
     isOpenSearch,
@@ -17,7 +18,7 @@ const Search = ({
     isClose: () => void;
 }) => {
     const dispatch = useAppDispatch();
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const cards = useAppSelector(
         (state) => state.allitems.allitems
@@ -40,16 +41,13 @@ const Search = ({
         }
     }, [values]);
 
-    // const handleImgClick = (filmId: number, token: string) => {
-    //     if (user.token) {
-    //         dispatch(getMoviebyidTokenApi({ filmId: filmId, token: token }));
-    //     } else {
-    //         dispatch(getMoviebyidApi(filmId));
-    //     }
-    //     navigate('/movie-page');
-    //     isClose();
-    //     window.scrollTo(0, 0);
-    // };
+    const handleClick = (id: number) => {
+        dispatch(getAllitembyidApi(id));
+        navigate('/allitem-page');
+        console.log(1)
+        isClose();
+        window.scrollTo(0, 0);
+    };
 
     return (
         <section
@@ -60,7 +58,7 @@ const Search = ({
                     filteredCards?.slice(0, 5).map((card: ICard) => (
                         <div
                             key={card.id}
-                            // onClick={() => handleImgClick(card.id, user.token)}
+                            onClick={() => handleClick(card.id)}
                             className="search__card"
                         >
                             <img

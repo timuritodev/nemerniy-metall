@@ -6,7 +6,7 @@ import { ItemsSlider } from '../../components/ItemsSlider/ItemsSlider';
 import { BinButton } from '../../components/BinButton/BinButton';
 
 export const AllItemPage = () => {
-    const item = useAppSelector((state) => state.itembyid.itembyid)
+    const item = useAppSelector((state) => state.allitembyid.itembyid)
     const balka = useAppSelector((state) => state.item.items[0])
     const ugol = useAppSelector((state) => state.item.items[1])
     const shveller = useAppSelector((state) => state.item.items[2])

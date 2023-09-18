@@ -10,6 +10,7 @@ import { CardList } from '../../components/Card/CardList';
 import { getCardsApi } from '../../services/redux/slices/cards/cards';
 import { getItemsApi } from '../../services/redux/slices/items/items';
 import { getAllItemsApi } from '../../services/redux/slices/allitems/allitems';
+// import Cookies from "js-cookie";
 
 export const MainPage: FC = () => {
     const dispatch = useAppDispatch();
@@ -22,6 +23,13 @@ export const MainPage: FC = () => {
         dispatch(getAllItemsApi());
         dispatch(getItemsApi());
     }, []);
+
+    // const myCookieValue = Cookies.get('tim');
+
+    // // Пример: Если кука с именем 'myCookie' существует, выведем ее значение в консоль
+    // if (myCookieValue) {
+    //     console.log('Значение куки:', myCookieValue);
+    // }
 
     // useEffect(() => {
     //     const isItemsFetched = localStorage.getItem('isItemsFetched');

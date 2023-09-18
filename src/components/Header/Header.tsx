@@ -56,7 +56,7 @@ export const Header: FC = () => {
                         type="text"
                         placeholder="Поиск по продукции"
                         onChange={handleChange}
-                        onBlur={setSearchClose}
+                        // onBlur={setSearchClose}
                         value={values}
                         autoComplete='off'
                     />

@@ -18,6 +18,7 @@ import { cardbyidReducer } from './slices/cardbyid/cardbyid';
 import { itemReducer } from './slices/items/items';
 import { itembyidReducer } from './slices/itembyid/itembyid';
 import { allitemsReducer } from './slices/allitems/allitems';
+import { allitembyidReducer } from './slices/allitembyid/allitembyid';
 
 
 const rootReducer = combineReducers({
@@ -28,6 +29,7 @@ const rootReducer = combineReducers({
 	item: itemReducer,
 	itembyid: itembyidReducer,
 	allitems: allitemsReducer,
+	allitembyid: allitembyidReducer,
 });
 
 const persistConfig = {
