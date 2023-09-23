@@ -1,9 +1,8 @@
 import './AllItemPage.css';
 import { useAppSelector } from '../../services/typeHooks';
-// import { BinButtonItem } from '../../components/BinButtonItem/BinButtonItem';
-import { LikeItem } from '../../components/LikeItem/LikeItem';
 import { ItemsSlider } from '../../components/ItemsSlider/ItemsSlider';
 import { BinButton } from '../../components/BinButton/BinButton';
+import { Like } from '../../components/Like/Like';
 
 export const AllItemPage = () => {
     const item = useAppSelector((state) => state.allitembyid.itembyid)
@@ -35,7 +34,7 @@ return (
                 <div className='item-page__price-container'>
                     <p className='item-page__price'>{item.price}</p>
                     <BinButton data={item} />
-                    <LikeItem data={item} />
+                    <Like data={item} />
                 </div>
             </div>
             <ItemsSlider title={'ada'} items={items.data} id={items.id} />

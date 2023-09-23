@@ -1,30 +1,32 @@
 import './Like.css';
 import { useAppDispatch } from '../../services/typeHooks';
 import { updateFavorite } from '../../services/redux/slices/cards/cards';
+import { updateFavoriteItem } from '../../services/redux/slices/items/items';
+import { useLocation } from 'react-router';
 import heart from '../../images/heart-card.png';
 import heart_clicked from '../../images/heart-card-clicked.png';
 
 export const Like = ({ data }: { data: any }) => {
   const dispatch = useAppDispatch();
-  const id = data.id;
+  const location = useLocation();
+  const id = location.pathname === '/' ? data.id : data.itemId;
 
-  // Получаем массив избранных карточек из localStorage
   const favoriteCardsJson = localStorage.getItem('favoriteCards');
-  
-  // Проверяем, есть ли значение в localStorage
   const favoriteCards = favoriteCardsJson ? JSON.parse(favoriteCardsJson) : [];
 
-  // Проверяем, есть ли текущая карточка в массиве избранных
   const isFavorite = favoriteCards.includes(id);
 
   const handleClickFavorite = () => {
-    // Инвертируем статус избранного
     const newIsFavorite = !isFavorite;
 
-    // Отправляем обновленное состояние на сервер или в хранилище Redux
     dispatch(updateFavorite({ favorite: newIsFavorite, id }));
 
-    // Обновляем массив избранных карточек в localStorage
+    if (location.pathname === '/') {
+      dispatch(updateFavorite({ favorite: newIsFavorite, id }));
+    } else {
+      dispatch(updateFavoriteItem({ favorite: newIsFavorite, id }));
+    }
+
     if (newIsFavorite) {
       favoriteCards.push(id);
     } else {
