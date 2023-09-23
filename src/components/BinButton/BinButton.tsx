@@ -8,6 +8,7 @@ export const BinButton = ({ data }: { data: any }) => {
     const location = useLocation();
     const dispatch = useAppDispatch();
     const id = location.pathname === '/' ? data.id : data.itemId;
+    const title = data.title;
 
     const cardName = data.title; // Здесь предполагается, что имя карточки хранится в `data.title`
 
@@ -20,7 +21,8 @@ export const BinButton = ({ data }: { data: any }) => {
     const cartItemNames = cartItemNamesJson ? JSON.parse(cartItemNamesJson) : [];
 
     // Проверяем, есть ли текущая карточка в корзине
-    const isInCart = cartItems.includes(id);
+    // const isInCart = cartItems.includes(id);
+    const isInCart = cartItemNames.includes(title);
 
     const handleClickBin = () => {
         // Инвертируем статус корзины
