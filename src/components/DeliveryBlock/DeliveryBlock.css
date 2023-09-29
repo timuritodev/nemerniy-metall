@@ -1,0 +1,24 @@
+.delivery-block {
+	width: 250px;
+	height: 260px;
+	background-color: #acb1bf;
+	border-radius: 15px;
+	margin: 75px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.delivery-block__title {
+	color: #000;
+	margin: 20px 20px;
+	z-index: 5;
+}
+
+.delivery-block__image {
+	width: 200px;
+	height: 260px;
+	position: absolute;
+	object-fit: cover;
+	top: 0;
+	right: -60px;
+}

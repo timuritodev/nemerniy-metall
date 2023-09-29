@@ -8,3 +8,8 @@
     margin: 0 auto;
     flex-wrap: wrap;
 }
+
+.main__container {
+    display: flex;
+    gap: 50px
+}

@@ -4,22 +4,22 @@ export const getImgs = (): Array<IImage> => {
 	const myimg = [
         {
             id: 1,
-            title: 'Скидки 15%',
-            text: 'Арматура 5*5, Уголок',
-            image: 'https://png.pngtree.com/thumb_back/fw800/background/20200821/pngtree-dark-blue-solid-color-background-wallpaper-image_396572.jpg',
+            title: 'Доставка от 20 тонн длинномером бесплатно',
+            text: 'При покупке от 20 тонн металлопроката доставка длинномером бесплатно',
+            image: 'https://www.stal-faktura.ru/upload/resize_cache/webp/upload/iblock/dd4/ba2srg7qewcgmtey56tfxotbs0lpeuua.webp',
         },
         {
             id: 2,
-            title: 'Скидки %фывы',
-            text: ' 5*5, Уголок',
-            image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG3cDrxffR5cmwyG9hZ5rplRGEu1-Csk7e2csIuWJM1g&s',
+            title: 'Чистим склад!',
+            text: 'Скидка 5% на всё при покупке металла на сумму от 100 000 рублей.',
+            image: 'https://www.stal-faktura.ru/upload/resize_cache/webp/upload/iblock/6ed/z2qwi27vecs2iqmj94z559tbr5i6i5qb.webp',
         },
-        {
-            id: 3,
-            title: ' 15%',
-            text: 'Арматура 5*5, Уголок',
-            image: 'https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2425.jpg',
-        }
+        // {
+        //     id: 3,
+        //     title: ' 15%',
+        //     text: 'Арматура 5*5, Уголок',
+        //     image: 'https://img.freepik.com/free-photo/vivid-blurred-colorful-wallpaper-background_58702-2425.jpg',
+        // }
     ]
 
 	return myimg;

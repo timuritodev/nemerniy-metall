@@ -1,0 +1,16 @@
+.discount {
+    width: 100px;
+    height: 100px;
+    background-color: #d83820; 
+    border-radius: 50%; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff; 
+    font-size: 16px; 
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 25px;
+  }
+  

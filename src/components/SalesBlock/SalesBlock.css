@@ -1,0 +1,22 @@
+.sales-block {
+	width: 606px;
+	height: 260px;
+	display: flex;
+	justify-content: space-between;
+	background-color: #5478e3;
+	border-radius: 15px;
+	margin: 75px 0;
+	position: relative;
+	overflow: hidden;
+}
+
+.sales-block__title {
+	color: #fff;
+	margin: 20px 20px;
+}
+
+.sales-block__image {
+	width: 450px;
+	height: 305px;
+	object-fit: cover;
+}
