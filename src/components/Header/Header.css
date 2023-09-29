@@ -1,9 +1,7 @@
 .header {
-	/* position: fixed;
+	position: sticky;
 	top: 0;
-	left: 0;
-	right: 0;
-	z-index: 1000; */
+	z-index: 4;
 	display: flex;
 	align-items: center;
 	height: 47px;
@@ -14,6 +12,9 @@
 	padding: 20px 0 20px 0;
 }
 
+.header-hidden {
+	display: none;
+}
 .header__logo {
 	width: 263px;
 	height: 47px;

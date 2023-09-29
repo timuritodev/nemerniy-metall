@@ -4,8 +4,9 @@ import React, { FC, useEffect, useState } from 'react';
 import { useAppDispatch } from '../../services/typeHooks';
 import { PopupFormProps } from '../../types/Popup.types';
 import { sendEmailApi } from '../../services/redux/slices/email/email';
+import { useAppSelector } from '../../services/typeHooks';
 
-const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
+const PopupForm: FC<PopupFormProps> = ({ switchPopupTrailer }) => {
     const dispatch = useAppDispatch();
 
     const [fio, setFio] = useState('');
@@ -13,6 +14,8 @@ const PopupForm: FC<PopupFormProps> = ({ isPopupOpen, switchPopupTrailer }) => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
     const [items, setItems] = useState('')
+    
+    const isPopupOpen = useAppSelector((state) => state.popup.popup);
 
     useEffect(() => {
         const cartItemNamesJson = localStorage.getItem('cartItemNames');

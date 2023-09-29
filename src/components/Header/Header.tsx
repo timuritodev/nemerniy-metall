@@ -6,6 +6,7 @@ import search from "../../images/search.svg";
 import heart from "../../images/hearts.png"
 import cart from "../../images/cart.png"
 import Search from '../Search/Search';
+import { useAppSelector } from '../../services/typeHooks';
 
 export const Header: FC = () => {
     const navigate = useNavigate();
@@ -19,6 +20,8 @@ export const Header: FC = () => {
     };
 
     const [isOpenSearch, setIsOpenSearch] = useState(false);
+
+	const isPopupOpen = useAppSelector((state) => state.popup.popup);
 
     useEffect(() => {
         if (values.length > 0) {
@@ -45,7 +48,7 @@ export const Header: FC = () => {
         navigate('/');
     }
     return (
-        <header className='header'>
+        <header className={`header ${isPopupOpen ? 'header-hidden' : ''}`}>
             <img className='header__logo' src={pic} alt={pic} onClick={handleClickLogo} />
             <div className="header__container">
                 <form className="header__search">

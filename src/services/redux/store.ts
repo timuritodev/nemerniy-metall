@@ -19,6 +19,7 @@ import { itemReducer } from './slices/items/items';
 import { itembyidReducer } from './slices/itembyid/itembyid';
 import { allitemsReducer } from './slices/allitems/allitems';
 import { allitembyidReducer } from './slices/allitembyid/allitembyid';
+import { popupReducer } from './slices/popup/popup';
 
 
 const rootReducer = combineReducers({
@@ -30,6 +31,7 @@ const rootReducer = combineReducers({
 	itembyid: itembyidReducer,
 	allitems: allitemsReducer,
 	allitembyid: allitembyidReducer,
+	popup: popupReducer,
 });
 
 const persistConfig = {

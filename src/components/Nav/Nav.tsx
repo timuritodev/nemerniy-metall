@@ -1,28 +1,11 @@
 import { Link } from 'react-router-dom';
 import './Nav.css';
-import { FC, useEffect, useState } from 'react';
+import { FC } from 'react';
 import { Telephone } from '../Telephone/Telephone';
 
 export const Nav: FC = () => {
-    const [isNavVisible, setIsNavVisible] = useState(true);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 0) {
-                setIsNavVisible(false);
-            } else {
-                setIsNavVisible(true);
-            }
-        };
-
-        window.addEventListener('scroll', handleScroll);
-
-        return () => {
-            window.removeEventListener('scroll', handleScroll);
-        };
-    }, []);
     return (
-        <nav className={`nav ${isNavVisible ? 'visible' : 'hidden'}`}>
+        <nav className="nav">
             <div className='links__container'>
                 <Link to="/service-page" className='nav__link'>Услуги</Link>
                 <Link to="/delivery-page" className='nav__link'>Доставка и самовывоз</Link>

@@ -1,4 +1,4 @@
 export interface PopupFormProps {
-	isPopupOpen: boolean;
+	isPopupOpen?: boolean;
 	switchPopupTrailer: () => void;
 }

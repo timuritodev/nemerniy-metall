@@ -1,18 +1,31 @@
-import { useState } from 'react';
-import './Button.css';
+import { useAppDispatch } from '../../services/typeHooks';
+import { openPopup, closePopup } from '../../services/redux/slices/popup/popup';
+import { useAppSelector } from '../../services/typeHooks';
 import PopupForm from '../PopupForm/PopupForm';
+import './Button.css';
 
 export const MainButton = ({ title }: { title: string }) => {
-    const [isPopupOpen, setIsPopupOpen] = useState(false);
+	const dispatch = useAppDispatch();
 
-    const switchPopupTrailer = () => {
-        setIsPopupOpen(!isPopupOpen);
-    };
-    return (
-        <div className='main-button__container'>
-            <button onClick={switchPopupTrailer} className={`button ${title === 'Оставить заявку' ? 'button_add' : ''}`}>{title}</button>
-            <PopupForm isPopupOpen={isPopupOpen} switchPopupTrailer={switchPopupTrailer} />
-        </div>
-    )
-}
+	const isPopupOpen = useAppSelector((state) => state.popup.popup);
 
+	const switchPopupTrailer = () => {
+		if (isPopupOpen) {
+			dispatch(closePopup());
+		} else {
+			dispatch(openPopup());
+		}
+	};
+
+	return (
+		<div className="main-button__container">
+			<button
+				onClick={switchPopupTrailer}
+				className={`button ${title === 'Оставить заявку' ? 'button_add' : ''}`}
+			>
+				{title}
+			</button>
+			<PopupForm switchPopupTrailer={switchPopupTrailer} />
+		</div>
+	);
+};
