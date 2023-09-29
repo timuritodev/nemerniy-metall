@@ -12,6 +12,7 @@ import { getItemsApi } from '../../services/redux/slices/items/items';
 import { getAllItemsApi } from '../../services/redux/slices/allitems/allitems';
 import { SalesBlock } from '../../components/SalesBlock/SalesBlock';
 import { DeliveryBlock } from '../../components/DeliveryBlock/DeliveryBlock';
+import { getImagesApi } from '../../services/redux/slices/images/images';
 // import Cookies from "js-cookie";
 
 export const MainPage: FC = () => {
@@ -24,6 +25,7 @@ export const MainPage: FC = () => {
 		dispatch(getCardsApi());
 		dispatch(getAllItemsApi());
 		dispatch(getItemsApi());
+        dispatch(getImagesApi());
 	}, []);
 
 	// const myCookieValue = Cookies.get('tim');
