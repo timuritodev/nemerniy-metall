@@ -1,11 +1,11 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { IImageState } from '../../../../types/Image.types';
-import { getImgs } from './imagesAPI';
+import { getImages } from './imagesAPI';
 
 export const getImagesApi = createAsyncThunk(
 	'@@image/image',
 	async () => {
-		return getImgs();
+		return getImages();
 	}
 );
 
