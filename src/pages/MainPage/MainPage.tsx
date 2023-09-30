@@ -19,6 +19,7 @@ export const MainPage: FC = () => {
 	const dispatch = useAppDispatch();
 	const blocks = useAppSelector((state) => state.block.blocks);
 	const cards = useAppSelector((state) => state.card.cards);
+    const images = useAppSelector((state) => state.image.images);
 
 	useEffect(() => {
 		dispatch(getBlocksApi());
@@ -53,7 +54,7 @@ export const MainPage: FC = () => {
 				)}
 				<CardList data={cards} />
 				<div className='main__container'>
-					<SalesBlock />
+                    {images.length > 1 ? <SalesBlock /> : ""}
 					<DeliveryBlock />
 				</div>
 			</div>

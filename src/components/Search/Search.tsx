@@ -44,7 +44,6 @@ const Search = ({
     const handleClick = (id: number) => {
         dispatch(getAllitembyidApi(id));
         navigate('/allitem-page');
-        console.log(1)
         isClose();
         window.scrollTo(0, 0);
     };

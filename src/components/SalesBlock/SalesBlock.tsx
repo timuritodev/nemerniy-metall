@@ -4,7 +4,7 @@ import { useAppSelector } from '../../services/typeHooks';
 import { Discount } from '../Discount/Discount';
 
 export const SalesBlock = () => {
-	const img = useAppSelector((state) => state.image.images[0]);
+	const img = useAppSelector((state) => state.image.images[1]);
 
 	return (
 		<div className="sales-block">

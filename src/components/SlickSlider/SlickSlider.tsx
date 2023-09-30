@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from '../../services/typeHooks';
 import { useEffect } from 'react';
 import { getImagesApi } from '../../services/redux/slices/images/images';
 import { MainButton } from '../Button/MainButton';
+import { Discount } from '../Discount/Discount';
 
 export const SlickSlider: FC = () => {
 	const dispatch = useAppDispatch();
@@ -34,7 +35,10 @@ export const SlickSlider: FC = () => {
 		<div className="slick-slider_container">
 			<Slider {...settings} className="slick-slider">
 				{img.map((item) => (
-					<ImgCard data={item} key={item.id} />
+					<div key={item.id}>
+						<ImgCard data={item} />
+						{item.id === 2 ? <Discount num={5} /> : null}
+					</div>
 				))}
 			</Slider>
 			<MainButton title={'Оставить заявку'} />
