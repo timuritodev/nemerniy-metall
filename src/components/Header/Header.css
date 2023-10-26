@@ -4,10 +4,10 @@
 	z-index: 4;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	height: 47px;
 	background-color: #fff;
-	max-width: 1440px;
-	justify-content: space-between;
+	width: 100%;
 	margin: 0 auto;
 	padding: 20px 0 20px 0;
 	box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); 

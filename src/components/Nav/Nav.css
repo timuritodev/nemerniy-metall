@@ -4,19 +4,9 @@
     justify-content: space-between;
     height: 40px;
     background-color: #f1f1f1;
-    max-width: 1440px;
+    width: 100%;
     margin: 0 auto;
     transition: opacity 0.3s ease; 
-}
-
-.nav.hidden {
-    opacity: 0;
-    pointer-events: none; 
-}
-
-.nav.visible {
-    opacity: 1;
-    pointer-events: auto; 
 }
 
 .nav__link {

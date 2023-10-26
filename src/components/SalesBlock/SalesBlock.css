@@ -13,6 +13,7 @@
 .sales-block__title {
 	color: #fff;
 	margin: 20px 20px;
+    width: 350px;
 }
 
 .sales-block__image {
