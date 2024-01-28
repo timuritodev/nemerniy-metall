@@ -18,6 +18,10 @@ export const fetchData = (url: string, method: string) => {
         },
     }).then((res) => checkRes(res));
 };
+// credentials: "same-origin",
+// }).then((res) => {console.log(res); return checkRes(res)})
+// };
+
 
 export const getCards = (): Promise<Array<ICard>> => {
     return fetchData(`${API_BASE_URL}/cards`, 'GET');
